@@ -24,24 +24,24 @@ export function KenyaForSection() {
       {/* Grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
         {KENYA_FOR.map((item, i) => {
-          const accent = item.border === "kgreen" ? "#1B5E3F" : "#0F0F0E";
+          const accent = item.accentColor;
+          const imgSrc = Array.isArray(item.img) ? item.img[0] : item.img;
           return (
             <div
-              key={item.label}
+              key={item.who}
               className="bg-cream text-ink group cursor-pointer hover:-translate-y-1 transition-transform duration-200"
               style={{ borderTop: `5px solid ${accent}` }}
             >
               <div className="relative aspect-[5/4] overflow-hidden">
                 <Image
-                  src={item.img}
-                  alt={item.label}
+                  src={imgSrc}
+                  alt={item.who}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                   unoptimized
                 />
                 <span
-                  className="absolute top-3 left-3 text-cream font-mono text-[9px] tracking-[0.12em] uppercase px-2 py-1 rounded-full"
-                  style={{ background: accent }}
+                  className="absolute top-3 left-3 bg-cream font-mono text-[9px] tracking-[0.12em] uppercase px-2 py-1"
                 >
                   No. {String(i + 1).padStart(2, "0")}
                 </span>
@@ -53,8 +53,9 @@ export function KenyaForSection() {
                 >
                   Kenya for
                 </p>
-                <h3 className="font-serif text-[28px] leading-none font-normal mb-1">{item.label}</h3>
-                <p className="font-mono text-[9px] tracking-[0.1em] uppercase opacity-50">{item.where}</p>
+                <h3 className="font-serif text-[28px] leading-none font-normal mb-1">{item.who}</h3>
+                <p className="font-mono text-[9px] tracking-[0.1em] uppercase opacity-50 mb-2">{item.where}</p>
+                <p className="font-sans text-[13px] leading-relaxed opacity-75">{item.note}</p>
               </div>
             </div>
           );

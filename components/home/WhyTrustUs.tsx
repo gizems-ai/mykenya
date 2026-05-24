@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BeadStrip } from "../BeadStrip";
 import { CuratedBadge } from "../CuratedBadge";
+import { FOUNDER_PHOTO } from "@/lib/data";
 
 export function WhyTrustUs() {
   return (
@@ -12,7 +13,7 @@ export function WhyTrustUs() {
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=900&q=80&auto=format&fit=crop"
+                src={FOUNDER_PHOTO.primary}
                 alt="Selin Tapıcı — Founder"
                 fill
                 className="object-cover object-top"

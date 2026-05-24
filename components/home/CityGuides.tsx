@@ -51,7 +51,7 @@ export function CityGuides() {
 
               {/* Flag stripe */}
               <div className="flex h-[10px] border border-ink mb-0">
-                {guide.stripes.map((color, j) => (
+                {guide.flag.map((color, j) => (
                   <div key={j} className="flex-1" style={{ background: color }} />
                 ))}
               </div>
@@ -59,7 +59,7 @@ export function CityGuides() {
               {/* Image */}
               <div className="relative border border-t-0 border-ink mb-4 overflow-hidden" style={{ aspectRatio: "5/6" }}>
                 <Image
-                  src={guide.img}
+                  src={Array.isArray(guide.img) ? guide.img[0] : guide.img}
                   alt={guide.city}
                   fill
                   className="object-cover"
@@ -67,11 +67,11 @@ export function CityGuides() {
                 />
               </div>
 
-              {/* Description */}
+              {/* Kicker + note */}
               <p className="font-mono text-[10px] tracking-[0.18em] uppercase opacity-60 mb-2">
-                Kenya · {guide.city}
+                {guide.kicker}
               </p>
-              <p className="font-sans text-sm leading-relaxed opacity-80">{guide.desc}</p>
+              <p className="font-sans text-sm leading-relaxed opacity-80">{guide.note}</p>
             </div>
           </div>
         ))}

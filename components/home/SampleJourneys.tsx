@@ -16,10 +16,10 @@ export function SampleJourneys() {
       {/* Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {ITINERARIES.map((trip) => {
-          const accent = trip.accent === "kred" ? "#C8302C" : "#1B5E3F";
+          const accent = trip.accent;
           return (
             <div
-              key={trip.num}
+              key={trip.n}
               className="bg-cream border border-ink/10 p-7"
               style={{ borderTop: `5px solid ${accent}` }}
             >
@@ -29,11 +29,10 @@ export function SampleJourneys() {
                   className="font-serif text-[96px] leading-none font-normal"
                   style={{ color: accent }}
                 >
-                  {trip.num}
+                  {trip.n}
                 </span>
                 <div className="text-right">
                   <p className="font-mono text-[10px] tracking-[0.15em] uppercase opacity-50">{trip.nights}</p>
-                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase opacity-50">{trip.travelers}</p>
                   <p
                     className="font-mono text-[10px] tracking-[0.15em] uppercase mt-1"
                     style={{ color: accent }}

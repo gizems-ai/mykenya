@@ -3,10 +3,10 @@ import Image from "next/image";
 export function NairobiFlag() {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 min-h-[560px]">
-      {/* Left — Nairobi photo */}
+      {/* Left — Nairobi photo (pexels 36048572 per design handoff) */}
       <div className="relative overflow-hidden">
         <Image
-          src="https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          src="https://images.pexels.com/photos/36048572/pexels-photo-36048572.jpeg?auto=compress&cs=tinysrgb&w=1600"
           alt="Nairobi"
           fill
           className="object-cover"

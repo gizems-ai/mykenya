@@ -55,8 +55,13 @@ export default function Footer() {
             ))}
           </div>
 
+          {/* BeadStrip above copyright (from handoff) */}
+          <div className="mt-10">
+            <BeadStrip height={12} />
+          </div>
+
           {/* Bottom row */}
-          <div className="mt-10 pt-6 border-t border-cream/20 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div className="pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-cream/40">
               © MyKenya 2026 · Made in Nairobi &amp; Istanbul
             </span>

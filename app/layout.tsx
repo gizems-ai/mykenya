@@ -3,6 +3,9 @@ import { Newsreader, DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import dynamic from "next/dynamic";
+
+const SelinChatDrawer = dynamic(() => import("@/components/SelinChatDrawer"), { ssr: false });
 
 const newsreader = Newsreader({
   subsets: ["latin"],
@@ -55,6 +58,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
+        <SelinChatDrawer />
       </body>
     </html>
   );
