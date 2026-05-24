@@ -9,8 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        // MyKenya — Classic Kenya palette
+        cream: "#FDFBF6",
+        paper: "#F7F2E6",
+        sand: "#E2D2AE",
+        kgreen: "#1B5E3F",
+        kred: "#C8302C",
+        ink: "#0F0F0E",
+        ksky: "#7BCEEA",
+        blush: "#E8B4A0",
+      },
+      fontFamily: {
+        serif: ["var(--font-newsreader)", "Cormorant Garamond", "Georgia", "serif"],
+        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-dm-mono)", "JetBrains Mono", "monospace"],
       },
     },
   },

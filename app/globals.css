@@ -3,25 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --p-red: #C8302C;
+  --p-green: #1B5E3F;
+  --p-black: #0F0F0E;
+  --p-cream: #FDFBF6;
+  --p-sand: #E2D2AE;
+  --p-paper: #F7F2E6;
+  --p-sky: #7BCEEA;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--p-cream);
+  color: var(--p-black);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .snap-x-mandatory {
+    scroll-snap-type: x mandatory;
+  }
+  .snap-start {
+    scroll-snap-align: start;
   }
 }
