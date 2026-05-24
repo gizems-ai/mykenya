@@ -71,7 +71,7 @@ export function DestinationsSection() {
             <a href="#" className="font-sans text-sm font-bold tracking-[0.06em] uppercase px-5 py-3 bg-ink text-cream rounded-full hover:opacity-90 transition-opacity">
               Open guide →
             </a>
-            <a href="#planner" className="font-sans text-sm font-bold tracking-[0.06em] uppercase px-5 py-3 border border-ink rounded-full hover:bg-ink hover:text-cream transition-colors">
+            <a href="/planner" className="font-sans text-sm font-bold tracking-[0.06em] uppercase px-5 py-3 border border-ink rounded-full hover:bg-ink hover:text-cream transition-colors">
               Plan with AI
             </a>
           </div>

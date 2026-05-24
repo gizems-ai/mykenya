@@ -44,7 +44,7 @@ export default function Nav() {
           <div className="flex items-center gap-4">
             <span className="font-mono text-[11px] opacity-60 hidden md:block">EN</span>
             <a
-              href="#planner"
+              href="/planner"
               className="hidden md:inline-block bg-kred text-cream font-sans text-sm font-bold tracking-[0.08em] uppercase px-[22px] py-[12px] rounded-full hover:opacity-90 transition-opacity"
             >
               Start Your Journey ↗
@@ -78,7 +78,7 @@ export default function Nav() {
               </Link>
             ))}
             <a
-              href="#planner"
+              href="/planner"
               onClick={() => setOpen(false)}
               className="mt-2 bg-kred text-cream font-sans text-sm font-bold tracking-[0.08em] uppercase px-6 py-3 rounded-full text-center hover:opacity-90 transition-opacity"
             >

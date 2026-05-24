@@ -63,7 +63,7 @@ export function SampleJourneys() {
                   From {trip.from}
                 </span>
                 <a
-                  href="#planner"
+                  href="/planner"
                   className="font-mono text-[11px] tracking-[0.1em] uppercase hover:underline"
                   style={{ color: accent }}
                 >

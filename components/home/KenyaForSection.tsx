@@ -65,7 +65,7 @@ export function KenyaForSection() {
       {/* CTA */}
       <div className="text-center">
         <a
-          href="#planner"
+          href="/planner"
           className="inline-block bg-cream text-ink font-sans text-sm font-bold tracking-[0.08em] uppercase px-8 py-4 rounded-full hover:opacity-90 transition-opacity"
         >
           Tell us what you&apos;re into — get a plan →

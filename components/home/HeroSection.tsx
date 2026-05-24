@@ -35,7 +35,7 @@ export function HeroSection() {
           {/* Buttons */}
           <div className="flex flex-wrap gap-4 mb-12">
             <a
-              href="#planner"
+              href="/planner"
               className="bg-ink text-cream font-sans text-sm font-bold tracking-[0.08em] uppercase px-[26px] py-[14px] rounded-full hover:opacity-90 transition-opacity"
             >
               Start Your Journey ↗
