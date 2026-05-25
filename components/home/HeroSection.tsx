@@ -19,11 +19,11 @@ export function HeroSection() {
 
           {/* H1 */}
           <h1 className="font-serif text-[clamp(56px,8vw,110px)] leading-[0.92] font-normal tracking-[-0.035em] mb-8">
-            Kenya,{" "}
+            Kenya,
             <br />
-            <em className="italic text-kgreen">beyond</em> the
+            <span className="text-kred">beyond</span> the
             <br />
-            <em className="italic text-kgreen">ordinary.</em>
+            <em className="italic text-kgreen">ordinary</em>.
           </h1>
 
           {/* Subtitle */}
