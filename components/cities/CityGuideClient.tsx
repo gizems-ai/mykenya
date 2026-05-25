@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { CuratedBadge } from "@/components/CuratedBadge";
 import type { CityData, NeighboringGuide } from "@/lib/cities";
@@ -151,8 +151,7 @@ export default function CityGuideClient({
 }) {
   const [activeTab, setActiveTab] = useState<"eat" | "do" | "stay">("eat");
 
-  // Group fortyEight by day
-  const days = Array.from(new Set(city.fortyEight.map((r) => r.day)));
+  // fortyEight items all have day + t fields (grouping done inline via isNewDay)
 
   return (
     <>
@@ -313,8 +312,8 @@ export default function CityGuideClient({
           </div>
         </div>
 
-        {/* Hero image */}
-        <div style={{ position: "relative", marginBottom: 0 }}>
+        {/* Hero image — matches handoff: CuratedBadge floats above-right of image */}
+        <div style={{ marginTop: 48, position: "relative" }}>
           <div
             style={{
               position: "relative",
@@ -333,27 +332,27 @@ export default function CityGuideClient({
             <div
               style={{
                 position: "absolute",
-                bottom: 16,
-                left: 16,
+                bottom: 20,
+                left: 20,
                 background: C.cream,
-                padding: "5px 12px",
-                borderRadius: 99,
+                padding: "8px 14px",
                 fontFamily: "var(--font-dm-mono), monospace",
                 fontSize: 10,
-                letterSpacing: "0.12em",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
                 color: C.ink,
               }}
             >
               {city.hero.caption}
             </div>
-            {/* CuratedBadge */}
-            <div style={{ position: "absolute", top: 16, right: 16 }}>
-              <CuratedBadge
-                size={130}
-                rotate={-12}
-                label={`GOOD MORNING · ${city.city.toUpperCase()} · 1,795 M ASL`}
-              />
-            </div>
+          </div>
+          {/* CuratedBadge overflows top-right, matching handoff top:-22 right:-28 */}
+          <div style={{ position: "absolute", top: -22, right: -28 }}>
+            <CuratedBadge
+              size={130}
+              rotate={-12}
+              label={`GOOD MORNING · ${city.city.toUpperCase()} · 1,795 M ASL`}
+            />
           </div>
         </div>
 
@@ -443,7 +442,15 @@ export default function CityGuideClient({
             const bg = accentBg(nb.accent);
             const fg = accentText(nb.accent);
             return (
-              <div key={nb.n}>
+              <article
+                key={nb.n}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  background: C.cream,
+                  border: `1px solid rgba(15,15,14,0.08)`,
+                }}
+              >
                 {/* image */}
                 <div style={{ position: "relative" }}>
                   <div
@@ -480,7 +487,7 @@ export default function CityGuideClient({
                   </div>
                 </div>
                 {/* text */}
-                <div style={{ paddingTop: 16 }}>
+                <div style={{ padding: "22px 26px 26px" }}>
                   <div
                     style={{
                       display: "flex",
@@ -534,7 +541,7 @@ export default function CityGuideClient({
                     {nb.body}
                   </p>
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>
@@ -841,78 +848,75 @@ export default function CityGuideClient({
             </p>
           </div>
 
-          {/* right — timeline */}
-          <div>
-            {days.map((day) => (
-              <div key={day} style={{ marginBottom: 32 }}>
-                <MonoKicker color={C.sand} style={{ marginBottom: 12 }}>
-                  ◇ {day}
-                </MonoKicker>
-                {city.fortyEight
-                  .filter((r) => r.day === day)
-                  .map((row, idx, arr) => (
+          {/* right — timeline, day headers inserted inline */}
+          <div style={{ borderTop: `1px solid rgba(253,251,246,0.3)` }}>
+            {city.fortyEight.map((row, i) => {
+              const isNewDay = i === 0 || city.fortyEight[i - 1].day !== row.day;
+              return (
+                <React.Fragment key={i}>
+                  {isNewDay && (
                     <div
-                      key={row.t + row.title}
-                      className="timeline-row-cols"
                       style={{
-                        display: "grid",
-                        gridTemplateColumns: "90px 220px 1fr",
-                        gap: "0 16px",
-                        alignItems: "baseline",
-                        padding: "14px 0",
-                        borderBottom:
-                          idx < arr.length - 1
-                            ? "1px solid rgba(253,251,246,0.2)"
-                            : "none",
+                        padding: "20px 0 8px",
+                        fontFamily: "var(--font-dm-mono), monospace",
+                        fontSize: 11,
+                        letterSpacing: "0.2em",
+                        textTransform: "uppercase",
+                        color: C.sand,
                       }}
                     >
-                      <span
-                        style={{
-                          fontFamily: "var(--font-dm-mono), monospace",
-                          fontSize: 13,
-                          color: C.sand,
-                        }}
-                      >
-                        {row.t}
-                      </span>
-                      <span
-                        style={{
-                          fontFamily: "var(--font-newsreader), serif",
-                          fontSize: 22,
-                          color: C.cream,
-                          lineHeight: 1.1,
-                        }}
-                      >
-                        {row.title}
-                      </span>
-                      <span
-                        style={{
-                          fontSize: 14,
-                          opacity: 0.85,
-                          color: C.cream,
-                        }}
-                      >
-                        {row.note}
-                      </span>
+                      ◇ {row.day}
                     </div>
-                  ))}
-              </div>
-            ))}
+                  )}
+                  <div
+                    className="timeline-row-cols"
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "90px 220px 1fr",
+                      gap: "0 32px",
+                      alignItems: "baseline",
+                      padding: "18px 0",
+                      borderBottom: "1px solid rgba(253,251,246,0.2)",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontFamily: "var(--font-dm-mono), monospace",
+                        fontSize: 13,
+                        letterSpacing: "0.1em",
+                        color: C.sand,
+                      }}
+                    >
+                      {row.t}
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: "var(--font-newsreader), serif",
+                        fontSize: 22,
+                        color: C.cream,
+                        lineHeight: 1.15,
+                      }}
+                    >
+                      {row.title}
+                    </span>
+                    <span style={{ fontSize: 14, lineHeight: 1.6, opacity: 0.85, color: C.cream }}>
+                      {row.note}
+                    </span>
+                  </div>
+                </React.Fragment>
+              );
+            })}
           </div>
         </div>
       </div>
 
-      {/* ─── F. Gallery row ────────────────────────────────────────── */}
-      <div
-        style={{
-          padding: "60px 56px",
-          background: C.cream,
-        }}
-      >
+      {/* ─── F. Gallery row — full bleed, 6-col grid, 3/4 ratio ──── */}
+      <div style={{ padding: "60px 0", background: C.cream }}>
         <div
-          className="gallery-flex"
+          className="gallery-grid"
           style={{
-            display: "flex",
+            display: "grid",
+            gridTemplateColumns: "repeat(6, 1fr)",
             gap: 4,
           }}
         >
@@ -920,11 +924,9 @@ export default function CityGuideClient({
             <div
               key={i}
               style={{
-                flex: "1 1 0",
                 position: "relative",
                 aspectRatio: "3/4",
                 overflow: "hidden",
-                minWidth: 0,
               }}
             >
               <Image
@@ -1291,13 +1293,15 @@ export default function CityGuideClient({
             <h2
               style={{
                 fontFamily: "var(--font-newsreader), serif",
-                fontSize: 80,
+                fontSize: 104,
                 margin: "0 0 20px",
                 lineHeight: 0.9,
+                fontWeight: 400,
+                letterSpacing: "-0.03em",
                 color: C.cream,
               }}
               dangerouslySetInnerHTML={{
-                __html: `Three days, <em style='color:${C.sand}'>perfectly stitched.</em>`,
+                __html: `Three days,<br/><em style='font-style:italic'>perfectly stitched.</em>`,
               }}
             />
             <p
@@ -1325,19 +1329,21 @@ export default function CityGuideClient({
               the full {city.city} run in under four hours — every booking, every
               transition, every quiet hour accounted for.
             </p>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 12, marginTop: 40, flexWrap: "wrap" }}>
               <a
                 href="/planner"
                 style={{
                   display: "inline-block",
                   background: C.cream,
                   color: C.kred,
-                  padding: "14px 28px",
+                  padding: "20px 32px",
+                  borderRadius: 999,
                   fontFamily: "var(--font-dm-sans), sans-serif",
-                  fontWeight: 600,
-                  fontSize: 15,
+                  fontWeight: 700,
+                  fontSize: 13,
                   textDecoration: "none",
-                  letterSpacing: "0.02em",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
                 }}
               >
                 Plan my {city.city} →
@@ -1350,12 +1356,14 @@ export default function CityGuideClient({
                   display: "inline-block",
                   background: "transparent",
                   color: C.cream,
-                  padding: "14px 28px",
+                  padding: "20px 32px",
+                  borderRadius: 999,
                   fontFamily: "var(--font-dm-sans), sans-serif",
                   fontWeight: 600,
-                  fontSize: 15,
+                  fontSize: 13,
                   textDecoration: "none",
-                  letterSpacing: "0.02em",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
                   border: "1.5px solid " + C.cream,
                 }}
               >
