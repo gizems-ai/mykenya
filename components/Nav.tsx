@@ -4,7 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { BeadStrip } from "./BeadStrip";
 
-const NAV_LINKS = ["Destinations", "Stays", "Experiences", "Journal", "Planner"];
+const NAV_LINKS = ["Destinations", "Programs", "Experiences", "Journal", "Planner"];
+const NAV_HREFS: Record<string, string> = {
+  Destinations: "/destinations",
+  Programs: "/stays",
+  Experiences: "/experiences",
+  Journal: "/journal",
+  Planner: "/planner",
+};
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -32,7 +39,7 @@ export default function Nav() {
             {NAV_LINKS.map((link) => (
               <Link
                 key={link}
-                href={`/${link.toLowerCase()}`}
+                href={NAV_HREFS[link] ?? `/${link.toLowerCase()}`}
                 className="font-sans text-sm font-medium text-ink hover:text-kred transition-colors"
               >
                 {link}
@@ -70,7 +77,7 @@ export default function Nav() {
             {NAV_LINKS.map((link) => (
               <Link
                 key={link}
-                href={`/${link.toLowerCase()}`}
+                href={NAV_HREFS[link] ?? `/${link.toLowerCase()}`}
                 className="font-sans text-base font-medium text-ink"
                 onClick={() => setOpen(false)}
               >

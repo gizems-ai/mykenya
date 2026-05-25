@@ -1,7 +1,7 @@
 import { BeadStrip } from "./BeadStrip";
 
 const LINKS = {
-  Discover: ["Destinations", "Stays", "Experiences", "City Guides", "Sample Journeys"],
+  Discover: ["Destinations", "Programs", "Experiences", "City Guides", "Sample Journeys"],
   Plan: ["AI Planner", "Concierge", "WhatsApp Selin", "Custom Trip", "FAQ"],
   Editorial: ["Journal", "Field Notes", "City Files", "Gear", "About Kenya"],
   Studio: ["About", "Founder Story", "Press", "Partners", "Contact"],
