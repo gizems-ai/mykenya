@@ -17,7 +17,7 @@ const P = {
 } as const;
 
 const INITIAL_MESSAGES = [
-  { id: "s1", role: "selin" as const, content: "Karibu! I'm Selin — I've lived in Nairobi for six years and slept in every camp on this list. Tell me about your Kenya dream and I'll narrow it down." },
+  { id: "s1", role: "selin" as const, content: "Karibu! I'm Ali — MyKenya's AI concierge. Tell me about your Kenya dream and I'll narrow it down. Selin, our founder, will personally follow up with your tailored itinerary." },
 ];
 
 interface Message { id: string; role: "selin" | "user"; content: string; }
@@ -27,11 +27,11 @@ function SelinAvatar({ size = "sm" }: { size?: "sm" | "md" }) {
   return (
     <div style={{
       width: dim, height: dim, borderRadius: "50%",
-      background: P.kred, color: P.cream,
+      background: P.kgreen, color: P.cream,
       display: "flex", alignItems: "center", justifyContent: "center",
       fontFamily: "var(--font-newsreader), serif", fontSize: size === "md" ? 18 : 13,
       flexShrink: 0,
-    }}>S</div>
+    }}>A</div>
   );
 }
 
@@ -81,7 +81,7 @@ function LeadForm({ onSubmit }: { onSubmit: (d: { name: string; email: string })
   return (
     <div style={{ background: "white", borderRadius: 16, padding: 20, border: `1px solid ${P.line}` }}>
       <p style={{ fontFamily: "var(--font-dm-sans), sans-serif", fontSize: 14, fontWeight: 600, color: P.ink, marginBottom: 12 }}>
-        Tell Selin a bit about you — she&apos;ll send a tailored shortlist.
+        Leave your details — Selin will personally send you a tailored shortlist.
       </p>
       <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 10 }}>
         <input type="text" placeholder="Your name" value={form.name}
@@ -93,7 +93,7 @@ function LeadForm({ onSubmit }: { onSubmit: (d: { name: string; email: string })
           padding: "12px 0", fontFamily: "var(--font-dm-sans), sans-serif", fontSize: 14,
           cursor: submitting ? "not-allowed" : "pointer", opacity: submitting ? 0.6 : 1,
         }}>
-          {submitting ? "Sending…" : "Send to Selin"}
+          {submitting ? "Sending…" : "Send"}
         </button>
       </form>
     </div>
@@ -105,7 +105,7 @@ function WhatsAppCard() {
   return (
     <div style={{ background: "white", borderRadius: 16, padding: 20, border: `1px solid ${P.line}`, textAlign: "center" }}>
       <p style={{ fontFamily: "var(--font-dm-sans), sans-serif", fontSize: 14, fontWeight: 600, color: P.ink, marginBottom: 12 }}>
-        Continue on WhatsApp — Selin replies within the hour.
+        Continue on WhatsApp — Selin personally replies within the hour.
       </p>
       <a href={href} target="_blank" rel="noopener noreferrer" style={{
         display: "inline-flex", alignItems: "center", gap: 8,
@@ -201,7 +201,7 @@ export default function SelinChatDrawer() {
     const waUrl = `https://wa.me/254700000000?text=${encodeURIComponent(`Hi Selin, my name is ${name} (${email}). I've been exploring Kenya stays and would love your help planning a trip.`)}`;
     setShowLeadForm(false);
     setQualified(true);
-    const confirmMsg: Message = { id: `s${Date.now()}`, role: "selin", content: `Thank you, ${name}! I've got your details. Tap below to continue on WhatsApp — I'll send you a personal shortlist within the hour.` };
+    const confirmMsg: Message = { id: `s${Date.now()}`, role: "selin", content: `Thanks, ${name}! I've passed your details to Selin — she'll send you a personal shortlist within the hour. You can also reach her directly on WhatsApp below.` };
     setMessages((prev) => [...prev, confirmMsg]);
     void waUrl;
   };
@@ -224,14 +224,14 @@ export default function SelinChatDrawer() {
                 whiteSpace: "nowrap",
               }}
             >
-              Chat with Selin
+              Chat with Ali
             </motion.div>
           )}
         </AnimatePresence>
 
         <motion.button
           onClick={() => setOpen((v) => !v)}
-          aria-label="Chat with Selin"
+          aria-label="Chat with Ali"
           style={{
             width: 56, height: 56, borderRadius: "50%",
             background: P.kgreen, color: P.cream, border: "none",
@@ -283,17 +283,17 @@ export default function SelinChatDrawer() {
               background: "white", zIndex: 50,
               display: "flex", flexDirection: "column", boxShadow: "-4px 0 40px rgba(0,0,0,0.15)",
             }}
-            aria-label="Selin chat"
+            aria-label="Ali chat"
           >
             {/* Header */}
             <div style={{ background: P.kgreen, padding: "16px 20px", display: "flex", alignItems: "center", justifyContent: "space-between", flexShrink: 0 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <SelinAvatar size="md" />
                 <div>
-                  <p style={{ fontFamily: "var(--font-dm-sans), sans-serif", fontSize: 14, fontWeight: 600, color: "white", margin: 0 }}>Selin</p>
+                  <p style={{ fontFamily: "var(--font-dm-sans), sans-serif", fontSize: 14, fontWeight: 600, color: "white", margin: 0 }}>Ali · MyKenya AI</p>
                   <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
                     <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#86efac", display: "inline-block" }} />
-                    <p style={{ fontFamily: "var(--font-dm-mono), monospace", fontSize: 10, color: "rgba(255,255,255,0.6)", margin: 0, letterSpacing: 1 }}>ONLINE · 6 YRS IN NAIROBI</p>
+                    <p style={{ fontFamily: "var(--font-dm-mono), monospace", fontSize: 10, color: "rgba(255,255,255,0.6)", margin: 0, letterSpacing: 1 }}>AI CONCIERGE · SELIN FOLLOWS UP</p>
                   </div>
                 </div>
               </div>
@@ -343,7 +343,7 @@ export default function SelinChatDrawer() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Tell Selin about your Kenya dream…"
+                  placeholder="Tell Ali about your Kenya dream…"
                   disabled={isLoading}
                   style={{
                     flex: 1, background: P.paper, borderRadius: 999,

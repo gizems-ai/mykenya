@@ -1,14 +1,18 @@
 "use client";
 
+import Image from "next/image";
+
+// Pin positions as percentage of image (left%, top%)
+// Calibrated to Britannica map geography
 const PINS = [
-  { name: "Nairobi", x: 255, y: 285 },
-  { name: "Masai Mara", x: 185, y: 320 },
-  { name: "Amboseli", x: 270, y: 355 },
-  { name: "Naivasha", x: 235, y: 270 },
-  { name: "Nanyuki", x: 270, y: 235 },
-  { name: "Watamu", x: 360, y: 290 },
-  { name: "Diani", x: 330, y: 360 },
-  { name: "Lamu", x: 395, y: 240 },
+  { name: "Nairobi",    px: 28, py: 56 },
+  { name: "Masai Mara", px: 18, py: 65 },
+  { name: "Amboseli",   px: 31, py: 72 },
+  { name: "Naivasha",   px: 23, py: 47 },
+  { name: "Nanyuki",    px: 38, py: 37 },
+  { name: "Watamu",     px: 58, py: 65 },
+  { name: "Diani",      px: 47, py: 83 },
+  { name: "Lamu",       px: 65, py: 52 },
 ];
 
 interface KenyaMapProps {
@@ -18,68 +22,77 @@ interface KenyaMapProps {
 
 export function KenyaMap({ active, onSelect }: KenyaMapProps) {
   return (
-    <svg
-      viewBox="0 0 520 480"
-      style={{ width: "100%", height: "auto" }}
-      role="img"
-      aria-label="Map of Kenya"
-    >
-      {/* Kenya outline — simplified */}
-      <path
-        d="M 155 60 L 200 55 L 260 58 L 330 70 L 390 90 L 430 130 L 450 170 L 460 210 L 455 250 L 430 280 L 410 310 L 390 340 L 370 380 L 340 420 L 310 450 L 280 460 L 250 455 L 220 440 L 200 410 L 185 380 L 170 340 L 150 300 L 130 260 L 120 220 L 115 180 L 120 140 L 135 100 Z"
-        fill="#F7F2E6"
-        stroke="#0F0F0E"
-        strokeWidth="1.5"
+    <div style={{ position: "relative", width: "100%", aspectRatio: "712 / 648" }}>
+      <Image
+        src="/kenya-map.png"
+        alt="Map of Kenya"
+        fill
+        className="object-contain"
+        unoptimized
       />
-      {/* Lake Turkana */}
-      <ellipse cx="210" cy="130" rx="18" ry="45" fill="#9BB4B8" opacity="0.6" />
-      {/* Lake Victoria (indent) */}
-      <path d="M 115 290 Q 140 310 155 330 L 130 340 Z" fill="#9BB4B8" opacity="0.6" />
-      {/* Equator */}
-      <line x1="120" y1="265" x2="460" y2="265" stroke="#0F0F0E" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.35" />
-      <text x="465" y="268" fontSize="8" fontFamily="monospace" fill="#0F0F0E" opacity="0.4">EQ</text>
-      {/* Neighbour labels */}
-      {[
-        { label: "Ethiopia", x: 280, y: 48 },
-        { label: "Somalia", x: 420, y: 200 },
-        { label: "Tanzania", x: 250, y: 470 },
-        { label: "Uganda", x: 92, y: 280 },
-        { label: "S. Sudan", x: 160, y: 42 },
-        { label: "Indian Ocean", x: 440, y: 390 },
-      ].map(({ label, x, y }) => (
-        <text key={label} x={x} y={y} fontSize="8" fontFamily="monospace" fill="#0F0F0E" opacity="0.4" textAnchor="middle">
-          {label}
-        </text>
-      ))}
-      {/* Pins */}
-      {PINS.map(({ name, x, y }) => {
+      {PINS.map(({ name, px, py }) => {
         const isActive = name === active;
         return (
-          <g key={name} style={{ cursor: "pointer" }} onClick={() => onSelect(name)}>
+          <button
+            key={name}
+            onClick={() => onSelect(name)}
+            style={{
+              position: "absolute",
+              left: `${px}%`,
+              top: `${py}%`,
+              transform: "translate(-50%, -50%)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 3,
+              cursor: "pointer",
+              background: "none",
+              border: "none",
+              padding: 0,
+              zIndex: 2,
+            }}
+          >
+            {/* Pulse ring for active */}
             {isActive && (
-              <circle cx={x} cy={y} r={14} fill="none" stroke="#C8302C" strokeWidth="1.5" opacity="0.5" />
+              <span style={{
+                position: "absolute",
+                width: 22,
+                height: 22,
+                borderRadius: "50%",
+                border: "1.5px solid #C8302C",
+                opacity: 0.5,
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }} />
             )}
-            <circle
-              cx={x}
-              cy={y}
-              r={isActive ? 6 : 4}
-              fill={isActive ? "#C8302C" : "#0F0F0E"}
-              stroke="#FDFBF6"
-              strokeWidth="1"
-            />
-            <text
-              x={x + 8}
-              y={y + 4}
-              fontSize={isActive ? 9 : 8}
-              fontFamily="monospace"
-              fill="#0F0F0E"
-              fontWeight={isActive ? "600" : "400"}
-            >
+            <span style={{
+              width: isActive ? 10 : 7,
+              height: isActive ? 10 : 7,
+              borderRadius: "50%",
+              background: isActive ? "#C8302C" : "#0F0F0E",
+              border: "1.5px solid #FDFBF6",
+              boxShadow: "0 1px 3px rgba(0,0,0,0.4)",
+              flexShrink: 0,
+              display: "block",
+            }} />
+            <span style={{
+              fontFamily: "monospace",
+              fontSize: 9,
+              letterSpacing: "0.05em",
+              color: "#0F0F0E",
+              background: "rgba(253,251,246,0.85)",
+              padding: "1px 4px",
+              borderRadius: 2,
+              fontWeight: isActive ? 700 : 400,
+              whiteSpace: "nowrap",
+              lineHeight: 1.4,
+            }}>
               {name}
-            </text>
-          </g>
+            </span>
+          </button>
         );
       })}
-    </svg>
+    </div>
   );
 }
