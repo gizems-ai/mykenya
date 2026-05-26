@@ -3,7 +3,7 @@ import { ITINERARIES } from "@/lib/data";
 
 export function SampleJourneys() {
   return (
-    <section className="py-[120px] px-14 bg-cream">
+    <section className="py-14 md:py-[120px] px-4 md:px-14 bg-cream">
       {/* Header */}
       <div className="mb-12">
         <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-kred mb-4">§ Sample journeys</p>

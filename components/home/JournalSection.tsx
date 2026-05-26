@@ -2,7 +2,7 @@ import { JOURNAL } from "@/lib/data";
 
 export function JournalSection() {
   return (
-    <section className="py-[100px] px-14 bg-cream">
+    <section className="py-14 md:py-[100px] px-4 md:px-14 bg-cream">
       {/* Header */}
       <div className="flex items-end justify-between mb-10 border-b border-ink/10 pb-6">
         <h2 className="font-serif text-[clamp(32px,4vw,56px)] font-normal tracking-[-0.02em]">

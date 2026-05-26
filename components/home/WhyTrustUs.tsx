@@ -7,7 +7,7 @@ export function WhyTrustUs() {
   return (
     <>
       <BeadStrip height={24} />
-      <section className="py-[100px] px-14 bg-cream">
+      <section className="py-14 md:py-[100px] px-4 md:px-14 bg-cream">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-20 items-center">
           {/* Left — founder portrait */}
           <div className="relative">

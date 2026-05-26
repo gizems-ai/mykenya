@@ -7,7 +7,7 @@ const VISIBLE = CITY_GUIDES;
 
 export function CityGuides() {
   return (
-    <section className="py-[100px]" style={{ background: "#7BCEEA" }}>
+    <section className="py-14 md:py-[100px]" style={{ background: "#7BCEEA" }}>
       <div className="px-4 md:px-14">
         {/* Header */}
         <div className="flex items-end justify-between pb-4 border-b-[1.5px] border-ink mb-0">

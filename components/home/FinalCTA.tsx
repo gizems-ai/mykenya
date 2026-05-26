@@ -7,7 +7,7 @@ export function FinalCTA() {
   ];
 
   return (
-    <section id="planner" className="py-[120px] px-14 bg-kred text-cream">
+    <section id="planner" className="py-14 md:py-[120px] px-4 md:px-14 bg-kred text-cream">
       <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-16 items-center">
         {/* Left */}
         <div>

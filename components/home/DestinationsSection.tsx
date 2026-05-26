@@ -15,7 +15,7 @@ export function DestinationsSection() {
   const filtered = filter === "All" ? DESTINATIONS : DESTINATIONS.filter((d) => d.region === filter);
 
   return (
-    <section id="destinations" className="pt-[120px] px-14 pb-16">
+    <section id="destinations" className="pt-14 md:pt-[120px] px-4 md:px-14 pb-10 md:pb-16">
       {/* Header */}
       <div className="flex items-end justify-between mb-12">
         <h2 className="font-serif text-[clamp(48px,6vw,88px)] leading-[0.94] font-normal tracking-[-0.03em] max-w-[640px]">

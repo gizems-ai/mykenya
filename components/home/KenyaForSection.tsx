@@ -3,7 +3,7 @@ import { KENYA_FOR } from "@/lib/data";
 
 export function KenyaForSection() {
   return (
-    <section className="py-[120px] px-14 bg-kred text-cream">
+    <section className="py-14 md:py-[120px] px-4 md:px-14 bg-kred text-cream">
       {/* Header */}
       <div className="flex items-end justify-between mb-12">
         <div>

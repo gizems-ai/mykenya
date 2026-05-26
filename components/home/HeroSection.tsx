@@ -5,7 +5,7 @@ import { CuratedBadge } from "../CuratedBadge";
 
 export function HeroSection() {
   return (
-    <section className="px-14 pt-14 pb-0 relative overflow-hidden">
+    <section className="px-4 md:px-14 pt-8 md:pt-14 pb-0 relative overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-10 items-stretch">
         {/* Left */}
         <div className="relative pt-6">
