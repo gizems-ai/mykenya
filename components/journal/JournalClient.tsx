@@ -146,13 +146,13 @@ export default function JournalClient() {
                 margin: "0 0 24px", lineHeight: 1.45,
               }}>{lead.excerpt}</p>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 32 }}>
-                <a href="#" style={{
+                <Link href={`/journal/${lead.slug}`} style={{
                   fontFamily: "var(--font-dm-sans), sans-serif",
                   fontSize: 13, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase",
                   padding: "12px 22px", borderRadius: 100,
                   background: P.ink, color: P.cream,
                   textDecoration: "none", display: "inline-block",
-                }}>Read the lead →</a>
+                }}>Read the lead →</Link>
                 <a href="#all-stories" style={{
                   fontFamily: "var(--font-dm-sans), sans-serif",
                   fontSize: 13, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase",
@@ -170,24 +170,26 @@ export default function JournalClient() {
                 color: "rgba(15,15,14,0.4)", marginBottom: 10,
               }}>Also reading</div>
               {JOURNAL_ENTRIES.slice(1, 4).map((entry) => (
-                <div key={entry.n} style={{
-                  display: "flex", gap: 10, alignItems: "baseline",
-                  padding: "9px 0", borderBottom: "1px dashed rgba(15,15,14,0.15)",
-                }}>
-                  <span style={{
-                    fontFamily: "var(--font-dm-mono), monospace",
-                    fontSize: 11, color: P.kred, flexShrink: 0,
-                  }}>No. {entry.n}</span>
-                  <span style={{ color: "rgba(15,15,14,0.15)" }}>—</span>
-                  <span style={{
-                    fontFamily: "var(--font-newsreader), Georgia, serif",
-                    fontSize: 15, color: P.ink, flex: 1, lineHeight: 1.3,
-                  }}>{entry.title}</span>
-                  <span style={{
-                    fontFamily: "var(--font-dm-mono), monospace",
-                    fontSize: 10, color: "rgba(15,15,14,0.4)", flexShrink: 0,
-                  }}>{entry.read}</span>
-                </div>
+                <Link key={entry.n} href={`/journal/${entry.slug}`} style={{ textDecoration: "none" }}>
+                  <div style={{
+                    display: "flex", gap: 10, alignItems: "baseline",
+                    padding: "9px 0", borderBottom: "1px dashed rgba(15,15,14,0.15)",
+                  }}>
+                    <span style={{
+                      fontFamily: "var(--font-dm-mono), monospace",
+                      fontSize: 11, color: P.kred, flexShrink: 0,
+                    }}>No. {entry.n}</span>
+                    <span style={{ color: "rgba(15,15,14,0.15)" }}>—</span>
+                    <span style={{
+                      fontFamily: "var(--font-newsreader), Georgia, serif",
+                      fontSize: 15, color: P.ink, flex: 1, lineHeight: 1.3,
+                    }}>{entry.title}</span>
+                    <span style={{
+                      fontFamily: "var(--font-dm-mono), monospace",
+                      fontSize: 10, color: "rgba(15,15,14,0.4)", flexShrink: 0,
+                    }}>{entry.read}</span>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -228,47 +230,49 @@ export default function JournalClient() {
             display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28,
           }}>
             {visible.map((entry) => (
-              <div key={entry.n} style={{
-                background: P.paper, borderRadius: 8, overflow: "hidden",
-              }}>
-                {/* Image */}
-                <div style={{ position: "relative", aspectRatio: "5/4", overflow: "hidden" }}>
-                  <img
-                    src={entry.img}
-                    alt={entry.title}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                  />
-                  <div style={{
-                    position: "absolute", top: 12, left: 12,
-                    background: accentBg(entry.accent), color: accentText(entry.accent),
-                    fontFamily: "var(--font-dm-mono), monospace",
-                    fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase",
-                    padding: "4px 10px", borderRadius: 100,
-                  }}>{entry.kicker}</div>
+              <Link key={entry.n} href={`/journal/${entry.slug}`} style={{ textDecoration: "none" }}>
+                <div style={{
+                  background: P.paper, borderRadius: 8, overflow: "hidden",
+                }}>
+                  {/* Image */}
+                  <div style={{ position: "relative", aspectRatio: "5/4", overflow: "hidden" }}>
+                    <img
+                      src={entry.img}
+                      alt={entry.title}
+                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                    />
+                    <div style={{
+                      position: "absolute", top: 12, left: 12,
+                      background: accentBg(entry.accent), color: accentText(entry.accent),
+                      fontFamily: "var(--font-dm-mono), monospace",
+                      fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase",
+                      padding: "4px 10px", borderRadius: 100,
+                    }}>{entry.kicker}</div>
+                  </div>
+                  {/* Body */}
+                  <div style={{ padding: "16px 18px 20px" }}>
+                    <div style={{
+                      fontFamily: "var(--font-dm-mono), monospace",
+                      fontSize: 10, letterSpacing: "0.1em",
+                      color: "rgba(15,15,14,0.45)", marginBottom: 8,
+                    }}>No.{entry.n} · {entry.date} · {entry.read}</div>
+                    <h3 style={{
+                      fontFamily: "var(--font-newsreader), Georgia, serif",
+                      fontSize: 22, fontWeight: 400, color: P.ink, margin: "0 0 8px", lineHeight: 1.25,
+                    }}>{entry.title}</h3>
+                    <p style={{
+                      fontFamily: "var(--font-dm-sans), sans-serif",
+                      fontSize: 14, color: "rgba(15,15,14,0.65)",
+                      margin: "0 0 14px", lineHeight: 1.55,
+                    }}>{entry.excerpt}</p>
+                    <div style={{
+                      fontFamily: "var(--font-dm-mono), monospace",
+                      fontSize: 11, letterSpacing: "0.1em",
+                      color: P.kred,
+                    }}>by {entry.author} →</div>
+                  </div>
                 </div>
-                {/* Body */}
-                <div style={{ padding: "16px 18px 20px" }}>
-                  <div style={{
-                    fontFamily: "var(--font-dm-mono), monospace",
-                    fontSize: 10, letterSpacing: "0.1em",
-                    color: "rgba(15,15,14,0.45)", marginBottom: 8,
-                  }}>No.{entry.n} · {entry.date} · {entry.read}</div>
-                  <h3 style={{
-                    fontFamily: "var(--font-newsreader), Georgia, serif",
-                    fontSize: 22, fontWeight: 400, color: P.ink, margin: "0 0 8px", lineHeight: 1.25,
-                  }}>{entry.title}</h3>
-                  <p style={{
-                    fontFamily: "var(--font-dm-sans), sans-serif",
-                    fontSize: 14, color: "rgba(15,15,14,0.65)",
-                    margin: "0 0 14px", lineHeight: 1.55,
-                  }}>{entry.excerpt}</p>
-                  <div style={{
-                    fontFamily: "var(--font-dm-mono), monospace",
-                    fontSize: 11, letterSpacing: "0.1em",
-                    color: P.kred,
-                  }}>by {entry.author} →</div>
-                </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -295,7 +299,7 @@ export default function JournalClient() {
             gap: 20,
           }}>
             {/* Large card */}
-            <div style={{ borderRadius: 8, overflow: "hidden", background: "rgba(253,251,246,0.08)" }}>
+            <Link href={`/journal/${JOURNAL_ENTRIES[1].slug}`} style={{ textDecoration: "none", borderRadius: 8, overflow: "hidden", background: "rgba(253,251,246,0.08)", display: "block" }}>
               <div style={{ position: "relative", aspectRatio: "4/3", overflow: "hidden" }}>
                 <img
                   src={JOURNAL_ENTRIES[1].img}
@@ -323,11 +327,11 @@ export default function JournalClient() {
                   fontSize: 11, color: P.sand,
                 }}>by {JOURNAL_ENTRIES[1].author}</div>
               </div>
-            </div>
+            </Link>
 
-            {/* Side card 1 */}
+            {/* Side cards */}
             {[JOURNAL_ENTRIES[6], JOURNAL_ENTRIES[9]].map((entry) => (
-              <div key={entry.n} style={{ borderRadius: 8, overflow: "hidden" }}>
+              <Link key={entry.n} href={`/journal/${entry.slug}`} style={{ textDecoration: "none", borderRadius: 8, overflow: "hidden", display: "block" }}>
                 <div style={{ position: "relative", aspectRatio: "4/3", overflow: "hidden" }}>
                   <img
                     src={entry.img}
@@ -351,7 +355,7 @@ export default function JournalClient() {
                     fontSize: 11, color: "rgba(253,251,246,0.55)",
                   }}>by {entry.author}</div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

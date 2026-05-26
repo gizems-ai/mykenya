@@ -26,6 +26,24 @@ export function HeroSection() {
             <em className="italic text-kgreen">ordinary</em>.
           </h1>
 
+          {/* Mobile hero image — shown only on mobile, sits between headline and subtitle */}
+          <div className="relative md:hidden mb-8 overflow-hidden aspect-[3/2]">
+            <Image
+              src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=900&q=80&auto=format&fit=crop"
+              alt="Masai Mara at dawn"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
+            <div className="absolute bottom-3 left-3 bg-cream/90 font-mono text-[9px] tracking-[0.12em] uppercase px-2.5 py-1 rounded-full">
+              Masai Mara · Field 023
+            </div>
+            <div className="absolute top-3 right-3 pointer-events-none">
+              <CuratedBadge size={72} rotate={-12} />
+            </div>
+          </div>
+
           {/* Subtitle */}
           <p className="font-sans text-[18px] leading-[1.55] opacity-80 max-w-[460px] mb-10">
             Local intelligence and AI-assisted logistics — finished in person by founder Selin Tapıcı.
@@ -41,7 +59,7 @@ export function HeroSection() {
               Start Your Journey ↗
             </a>
             <a
-              href="#destinations"
+              href="/experiences"
               className="border border-ink text-ink font-sans text-sm font-bold tracking-[0.08em] uppercase px-[26px] py-[14px] rounded-full hover:bg-ink hover:text-cream transition-colors"
             >
               Explore Kenya
@@ -51,7 +69,7 @@ export function HeroSection() {
           {/* Mini facts */}
           <div className="flex gap-8 border-t border-ink/10 pt-6">
             {[
-              { num: "6", label: "Years on the ground" },
+              { num: "6+", label: "Years on the ground" },
               { num: "48", label: "Trusted partners" },
               { num: "1,200+", label: "Travelers helped" },
             ].map(({ num, label }) => (
@@ -63,29 +81,25 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Right — photo */}
+        {/* Right — photo (desktop only) */}
         <div className="relative hidden md:block">
-          {/* Main photo */}
           <div className="relative aspect-[4/5] overflow-hidden">
             <Image
               src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80&auto=format&fit=crop"
-              alt="Masai Mara"
+              alt="Masai Mara at dawn"
               fill
               className="object-cover"
-             
+              priority
             />
-            {/* Caption pill */}
             <div className="absolute bottom-4 left-4 bg-cream/90 font-mono text-[10px] tracking-[0.12em] uppercase px-3 py-1.5 rounded-full">
               Masai Mara · Field 023
             </div>
           </div>
 
-          {/* Curated badge sticker */}
           <div className="absolute top-4 right-4 pointer-events-none">
             <CuratedBadge size={120} rotate={-14} />
           </div>
 
-          {/* Inset photo */}
           <div className="absolute -bottom-8 -right-4 w-[180px] border-[3px] border-cream">
             <div className="relative aspect-[3/4] overflow-hidden">
               <Image
@@ -93,7 +107,6 @@ export function HeroSection() {
                 alt="Diani beach"
                 fill
                 className="object-cover"
-               
               />
             </div>
           </div>
