@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ITINERARIES } from "@/lib/data";
 
 export function SampleJourneys() {
@@ -62,13 +63,13 @@ export function SampleJourneys() {
                 <span className="font-mono text-[11px] tracking-[0.1em] uppercase opacity-60">
                   From {trip.from}
                 </span>
-                <a
-                  href="/planner"
+                <Link
+                  href={`/itineraries/${trip.slug}`}
                   className="font-mono text-[11px] tracking-[0.1em] uppercase hover:underline"
                   style={{ color: accent }}
                 >
-                  Customize →
-                </a>
+                  See full programme →
+                </Link>
               </div>
             </div>
           );

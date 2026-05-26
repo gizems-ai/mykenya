@@ -224,6 +224,7 @@ export const KENYA_FOR = [
 export const ITINERARIES = [
   {
     n: "01",
+    slug: "seven-days-first-time",
     title: "Seven Days for the First Time",
     nights: "7 nights · 2 travelers",
     blurb: "Nairobi's design districts, three nights in the Mara, then quiet beach to land.",
@@ -234,6 +235,7 @@ export const ITINERARIES = [
   },
   {
     n: "02",
+    slug: "honeymoon-bush-barefoot",
     title: "Honeymoon — Bush & Barefoot",
     nights: "10 nights · couple",
     blurb: "A privately guided Mara camp, then a Swahili stone house in Lamu.",
@@ -244,6 +246,7 @@ export const ITINERARIES = [
   },
   {
     n: "03",
+    slug: "slow-kenya",
     title: "Slow Kenya",
     nights: "14 nights · solo or couple",
     blurb: "One place at a time. Watamu creek mornings, Lamu evenings, no rush.",
@@ -254,13 +257,14 @@ export const ITINERARIES = [
   },
   {
     n: "04",
+    slug: "family-kenya-first-trip-with-kids",
     title: "Family Kenya — first trip with kids",
     nights: "10 nights · family of 4",
     blurb: "Giraffe Manor breakfast, kid-tested camps with pools, then easy beach days in Watamu.",
     route: "Nairobi → Mara → Watamu",
     from: "KES 560k · total",
     accent: "#1B5E3F",
-    img: "https://images.pexels.com/photos/35648217/pexels-photo-35648217.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    img: "/single-mother-safari.jpg",
   },
 ];
 
