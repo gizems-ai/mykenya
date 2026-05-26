@@ -26,5 +26,32 @@ export default function JournalArticlePage({ params }: { params: { slug: string 
   const article = ARTICLES[params.slug];
   if (!entry || !article) notFound();
 
-  return <JournalArticleClient entry={entry} article={article} />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: entry.title,
+    description: entry.excerpt,
+    author: {
+      "@type": "Person",
+      name: entry.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "MyKenya",
+      url: "https://mykenya.vercel.app",
+    },
+    url: `https://mykenya.vercel.app/journal/${entry.slug}`,
+    image: entry.img,
+    articleSection: entry.kicker,
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <JournalArticleClient entry={entry} article={article} />
+    </>
+  );
 }

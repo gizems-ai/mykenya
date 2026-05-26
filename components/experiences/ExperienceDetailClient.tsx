@@ -39,10 +39,13 @@ export default function ExperienceDetailClient({ slug }: { slug: string }) {
           .sd-hon-grid   { grid-template-columns: 1fr !important; }
           .sd-cta-grid   { grid-template-columns: 1fr !important; }
           .sd-rel-grid   { grid-template-columns: 1fr 1fr !important; }
+          .section-pad   { padding-left: 24px !important; padding-right: 24px !important; }
+          .breadcrumb-wrap { padding-left: 24px !important; padding-right: 24px !important; }
         }
         @media (max-width: 480px) {
           .sd-act-grid   { grid-template-columns: 1fr !important; }
           .sd-stays-grid { grid-template-columns: 1fr !important; }
+          .sd-rel-grid   { grid-template-columns: 1fr !important; }
         }
       `}} />
 
@@ -67,7 +70,7 @@ export default function ExperienceDetailClient({ slug }: { slug: string }) {
       </div>
 
       {/* ── 2. Hero ────────────────────────────────────────────────────────── */}
-      <section style={{ background: P.cream, padding: "72px 56px" }}>
+      <section className="section-pad" style={{ background: P.cream, padding: "72px 48px" }}>
         <div className="sd-hero-grid" style={{
           maxWidth: 1280, margin: "0 auto",
           display: "grid", gridTemplateColumns: "1.15fr 1fr",
@@ -181,7 +184,7 @@ export default function ExperienceDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── 4. Why Kenya ──────────────────────────────────────────────────── */}
-      <section style={{ background: P.cream, padding: "80px 48px" }}>
+      <section className="section-pad" style={{ background: P.cream, padding: "80px 48px" }}>
         <div className="sd-why-grid" style={{
           maxWidth: 1280, margin: "0 auto",
           display: "grid", gridTemplateColumns: "1fr 1.4fr",
@@ -253,7 +256,7 @@ export default function ExperienceDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── 5. What we plan — 4 cards ─────────────────────────────────────── */}
-      <section style={{ background: P.paper, padding: "80px 48px" }}>
+      <section className="section-pad" style={{ background: P.paper, padding: "80px 48px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <h2 style={{
             fontFamily: "var(--font-newsreader), Georgia, serif",
@@ -307,7 +310,7 @@ export default function ExperienceDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── 6. Sample day ─────────────────────────────────────────────────── */}
-      <section id="sample-day" style={{ background: P.kgreen, padding: "80px 48px" }}>
+      <section id="sample-day" className="section-pad" style={{ background: P.kgreen, padding: "80px 48px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div style={{ marginBottom: 48 }}>
             <div style={{
@@ -366,7 +369,7 @@ export default function ExperienceDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── 7. Signature stays ────────────────────────────────────────────── */}
-      <section style={{ background: P.cream, padding: "80px 48px" }}>
+      <section className="section-pad" style={{ background: P.cream, padding: "80px 48px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 40, flexWrap: "wrap", gap: 16 }}>
             <h2 style={{
@@ -428,7 +431,7 @@ export default function ExperienceDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── 9. Practical ──────────────────────────────────────────────────── */}
-      <section style={{ background: P.paper, padding: "80px 48px" }}>
+      <section className="section-pad" style={{ background: P.paper, padding: "80px 48px" }}>
         <div className="sd-prac-grid" style={{
           maxWidth: 1280, margin: "0 auto",
           display: "grid", gridTemplateColumns: "1fr 1.4fr",
@@ -486,7 +489,7 @@ export default function ExperienceDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── 10. Honest notes ─────────────────────────────────────────────── */}
-      <section style={{ background: P.cream, padding: "80px 48px" }}>
+      <section className="section-pad" style={{ background: P.cream, padding: "80px 48px" }}>
         <div className="sd-hon-grid" style={{
           maxWidth: 1280, margin: "0 auto",
           display: "grid", gridTemplateColumns: "1fr 1.4fr",
@@ -533,7 +536,7 @@ export default function ExperienceDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── 11. Traveler quotes ───────────────────────────────────────────── */}
-      <section style={{ background: P.paper, padding: "80px 48px" }}>
+      <section className="section-pad" style={{ background: P.paper, padding: "80px 48px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
             {copy.quotes.map((q, i) => (
@@ -558,7 +561,7 @@ export default function ExperienceDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── 12. Related experiences ───────────────────────────────────────── */}
-      <section style={{ background: P.paper, padding: "80px 48px" }}>
+      <section className="section-pad" style={{ background: P.paper, padding: "80px 48px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 40, flexWrap: "wrap", gap: 16 }}>
             <h2 style={{
@@ -612,7 +615,7 @@ export default function ExperienceDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── 13. Final CTA ────────────────────────────────────────────────── */}
-      <section style={{ background: P.kred, padding: "80px 48px" }}>
+      <section className="section-pad" style={{ background: P.kred, padding: "80px 48px" }}>
         <div className="sd-cta-grid" style={{
           maxWidth: 1280, margin: "0 auto",
           display: "grid", gridTemplateColumns: "1.4fr 1fr",

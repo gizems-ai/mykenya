@@ -29,6 +29,11 @@ export default function ItineraryDetailClient({ slug }: { slug: string }) {
           .itn-prac-grid  { grid-template-columns: 1fr !important; }
           .itn-hon-grid   { grid-template-columns: 1fr !important; }
           .itn-nav-grid   { grid-template-columns: 1fr !important; }
+          .section-pad    { padding-left: 24px !important; padding-right: 24px !important; }
+          .breadcrumb-wrap { padding-left: 24px !important; padding-right: 24px !important; }
+        }
+        @media (max-width: 480px) {
+          .itn-meta-grid  { grid-template-columns: 1fr !important; }
         }
       `}} />
 
@@ -54,7 +59,7 @@ export default function ItineraryDetailClient({ slug }: { slug: string }) {
       </div>
 
       {/* ── 2. Hero ────────────────────────────────────────────────────────── */}
-      <section style={{ background: P.cream, padding: "72px 56px" }}>
+      <section className="section-pad" style={{ background: P.cream, padding: "72px 48px" }}>
         <div className="itn-hero-grid" style={{
           maxWidth: 1280, margin: "0 auto",
           display: "grid", gridTemplateColumns: "1.2fr 1fr",
@@ -101,7 +106,7 @@ export default function ItineraryDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── 3. Meta strip ──────────────────────────────────────────────────── */}
-      <div style={{ background: P.ink, padding: "0 56px" }}>
+      <div className="section-pad" style={{ background: P.ink, padding: "0 48px" }}>
         <div className="itn-meta-grid" style={{
           maxWidth: 1280, margin: "0 auto",
           display: "grid", gridTemplateColumns: "repeat(4, 1fr)",
@@ -124,7 +129,7 @@ export default function ItineraryDetailClient({ slug }: { slug: string }) {
       </div>
 
       {/* ── 4. Who it's for ────────────────────────────────────────────────── */}
-      <section style={{ padding: "64px 56px", background: P.paper, borderBottom: "1px solid rgba(15,15,14,0.08)" }}>
+      <section className="section-pad" style={{ padding: "64px 48px", background: P.paper, borderBottom: "1px solid rgba(15,15,14,0.08)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }}>
           <div>
             <div style={{ fontFamily: "var(--font-dm-mono), monospace", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: accent, marginBottom: 18 }}>This trip is for</div>
@@ -148,7 +153,7 @@ export default function ItineraryDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── 5. Day-by-day program ──────────────────────────────────────────── */}
-      <section style={{ padding: "80px 56px", background: P.cream }}>
+      <section className="section-pad" style={{ padding: "80px 48px", background: P.cream }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div style={{ marginBottom: 56 }}>
             <div style={{ fontFamily: "var(--font-dm-mono), monospace", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: accent, marginBottom: 12 }}>§ The programme</div>
@@ -201,7 +206,7 @@ export default function ItineraryDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── 6. Stays ───────────────────────────────────────────────────────── */}
-      <section style={{ padding: "72px 56px", background: P.kgreen }}>
+      <section className="section-pad" style={{ padding: "72px 48px", background: P.kgreen }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div style={{ marginBottom: 48 }}>
             <div style={{ fontFamily: "var(--font-dm-mono), monospace", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(253,251,246,0.5)", marginBottom: 12 }}>§ Where you sleep</div>
@@ -226,7 +231,7 @@ export default function ItineraryDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── 7. Practical + Honest ──────────────────────────────────────────── */}
-      <section style={{ padding: "72px 56px", background: P.paper }}>
+      <section className="section-pad" style={{ padding: "72px 48px", background: P.paper }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }} className="itn-prac-grid">
           <div>
             <div style={{ fontFamily: "var(--font-dm-mono), monospace", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: accent, marginBottom: 28 }}>§ Practical</div>
@@ -254,7 +259,7 @@ export default function ItineraryDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── 8. CTA ─────────────────────────────────────────────────────────── */}
-      <section style={{ padding: "80px 56px", background: P.ink }}>
+      <section className="section-pad" style={{ padding: "80px 48px", background: P.ink }}>
         <div style={{ maxWidth: 780, margin: "0 auto", textAlign: "center" }}>
           <div style={{ fontFamily: "var(--font-dm-mono), monospace", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(253,251,246,0.4)", marginBottom: 20 }}>§ Make it yours</div>
           <h2 style={{ fontFamily: "var(--font-newsreader), serif", fontWeight: 400, fontSize: "clamp(32px, 3.5vw, 52px)", lineHeight: 1.05, letterSpacing: -1, color: P.cream, margin: "0 0 20px" }}>
@@ -296,7 +301,7 @@ export default function ItineraryDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ── 9. Other journeys ──────────────────────────────────────────────── */}
-      <section style={{ padding: "64px 56px", background: P.cream }}>
+      <section className="section-pad" style={{ padding: "64px 48px", background: P.cream }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div style={{ fontFamily: "var(--font-dm-mono), monospace", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(15,15,14,0.4)", marginBottom: 32 }}>§ Other starting points</div>
           <div className="itn-nav-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
