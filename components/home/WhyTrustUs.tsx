@@ -16,7 +16,7 @@ export function WhyTrustUs() {
                 src={FOUNDER_PHOTO.primary}
                 alt="Selin Tapıcı — Founder"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-center"
                
               />
             </div>

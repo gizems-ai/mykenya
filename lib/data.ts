@@ -94,11 +94,8 @@ export const NAIROBI_PHOTO = [
 
 // Founder photo (from handoff)
 export const FOUNDER_PHOTO = {
-  primary: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=1200&q=80&auto=format&fit=crop",
-  fallbacks: [
-    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200&q=80&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=1200&q=80&auto=format&fit=crop",
-  ],
+  primary: "/selin-founder.jpg",
+  fallbacks: [],
 };
 
 export const KENYA_FOR = [
