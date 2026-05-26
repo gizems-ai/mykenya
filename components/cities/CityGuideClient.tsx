@@ -325,7 +325,7 @@ export default function CityGuideClient({
               src={city.hero.img}
               alt={city.hero.caption}
               fill
-              unoptimized
+             
               style={{ objectFit: "cover" }}
             />
             {/* caption pill */}
@@ -464,7 +464,7 @@ export default function CityGuideClient({
                       src={nb.img}
                       alt={nb.name}
                       fill
-                      unoptimized
+                     
                       style={{ objectFit: "cover" }}
                     />
                   </div>
@@ -770,7 +770,7 @@ export default function CityGuideClient({
                     src={stay.img}
                     alt={stay.name}
                     fill
-                    unoptimized
+                   
                     style={{ objectFit: "cover" }}
                   />
                 </div>
@@ -933,7 +933,7 @@ export default function CityGuideClient({
                 src={src}
                 alt={`Gallery ${i + 1}`}
                 fill
-                unoptimized
+               
                 style={{ objectFit: "cover" }}
               />
             </div>
@@ -1253,7 +1253,7 @@ export default function CityGuideClient({
                   src={g.img}
                   alt={g.city}
                   fill
-                  unoptimized
+                 
                   style={{ objectFit: "cover" }}
                 />
               </div>
@@ -1349,7 +1349,7 @@ export default function CityGuideClient({
                 Plan my {city.city} →
               </a>
               <a
-                href="https://wa.me/1234567890"
+                href="https://wa.me/905323343613"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

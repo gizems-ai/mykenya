@@ -50,7 +50,7 @@ export function SampleJourneys() {
                   alt={trip.title}
                   fill
                   className="object-cover"
-                  unoptimized
+                 
                 />
               </div>
 

@@ -235,7 +235,7 @@ export default function SelinPlannerChat() {
       .join("\n");
 
     const waMsg = `Hi Selin! I've just completed the MyKenya planner. Here are my answers:\n\n${summary}\n\nMy name is ${firstName.trim()} ${lastName.trim()} (${email.trim()}). Looking forward to your Kenya shortlist!`;
-    const waUrl = `https://wa.me/254700000000?text=${encodeURIComponent(waMsg)}`;
+    const waUrl = `https://wa.me/905323343613?text=${encodeURIComponent(waMsg)}`;
 
     await new Promise((r) => setTimeout(r, 4000));
     setIsGenerating(false);
@@ -289,7 +289,7 @@ export default function SelinPlannerChat() {
           WhatsApp should have opened with your plan summary. If it didn&apos;t, tap below.
         </p>
         <a
-          href={`https://wa.me/254700000000?text=${encodeURIComponent(`Hi Selin, I completed the MyKenya planner. My name is ${firstName} ${lastName} (${email}).`)}`}
+          href={`https://wa.me/905323343613?text=${encodeURIComponent(`Hi Selin, I completed the MyKenya planner. My name is ${firstName} ${lastName} (${email}).`)}`}
           target="_blank" rel="noopener noreferrer"
           style={{
             display: "inline-flex", alignItems: "center", gap: 8,

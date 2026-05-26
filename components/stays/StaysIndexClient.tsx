@@ -235,7 +235,7 @@ function FilterRail({ count }: { count: number }) {
 
 function StayCard({ stay }: { stay: Stay }) {
   function openWhatsApp() {
-    window.open("https://wa.me/254700000000?text=Hi%20Selin%2C%20I%27m%20interested%20in%20" + encodeURIComponent(stay.title), "_blank");
+    window.open("https://wa.me/905323343613?text=Hi%20Selin%2C%20I%27m%20interested%20in%20" + encodeURIComponent(stay.title), "_blank");
   }
 
   return (
@@ -443,7 +443,7 @@ function Results({ activeCategory }: { activeCategory: string }) {
 
 function SelinBand() {
   function openWhatsApp() {
-    window.open("https://wa.me/254700000000?text=Hi%20Selin%2C%20I%27d%20like%20help%20planning%20my%20Kenya%20stay.", "_blank");
+    window.open("https://wa.me/905323343613?text=Hi%20Selin%2C%20I%27d%20like%20help%20planning%20my%20Kenya%20stay.", "_blank");
   }
 
   return (

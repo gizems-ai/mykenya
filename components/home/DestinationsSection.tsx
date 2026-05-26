@@ -57,7 +57,7 @@ export function DestinationsSection() {
               alt={activeData.name}
               fill
               className="object-cover transition-all duration-300"
-              unoptimized
+             
             />
             <span className="absolute top-4 left-4 bg-kred text-cream font-mono text-[10px] tracking-[0.15em] uppercase px-3 py-1.5 rounded-full">
               {activeData.region}
@@ -94,7 +94,7 @@ export function DestinationsSection() {
                 alt={dest.name}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
-                unoptimized
+               
               />
             </div>
             <div className="p-2">

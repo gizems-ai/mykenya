@@ -1,18 +1,50 @@
+import Link from "next/link";
 import { BeadStrip } from "./BeadStrip";
 
-const LINKS = {
-  Discover: ["Destinations", "Programs", "Experiences", "City Guides", "Sample Journeys"],
-  Plan: ["AI Planner", "Concierge", "WhatsApp Selin", "Custom Trip", "FAQ"],
-  Editorial: ["Journal", "Field Notes", "City Files", "Gear", "About Kenya"],
-  Studio: ["About", "Founder Story", "Press", "Partners", "Contact"],
+const LINKS: Record<string, { label: string; href: string }[]> = {
+  Discover: [
+    { label: "Destinations",    href: "/destinations/nairobi" },
+    { label: "Stays",           href: "/stays" },
+    { label: "Experiences",     href: "/experiences" },
+    { label: "City Guides",     href: "/cities/nairobi" },
+    { label: "Sample Journeys", href: "/itineraries/seven-days-first-time" },
+  ],
+  Plan: [
+    { label: "AI Planner",    href: "/planner" },
+    { label: "Concierge",     href: "/planner" },
+    { label: "WhatsApp Selin", href: "https://wa.me/905323343613" },
+    { label: "Custom Trip",   href: "/planner" },
+    { label: "Journal",       href: "/journal" },
+  ],
+  Editorial: [
+    { label: "Journal",      href: "/journal" },
+    { label: "Field Notes",  href: "/journal" },
+    { label: "City Files",   href: "/cities/nairobi" },
+    { label: "Experiences",  href: "/experiences" },
+    { label: "Bucket List",  href: "/experiences/bucket-list" },
+  ],
+  Studio: [
+    { label: "About",         href: "/about" },
+    { label: "Founder Story", href: "/about" },
+    { label: "Press",         href: "/about" },
+    { label: "WhatsApp",      href: "https://wa.me/905323343613" },
+    { label: "Contact",       href: "https://wa.me/905323343613" },
+  ],
 };
+
+const SOCIAL: { label: string; href: string }[] = [
+  { label: "Instagram",    href: "https://instagram.com" },
+  { label: "WhatsApp",     href: "https://wa.me/905323343613" },
+  { label: "Newsletter",   href: "/journal" },
+  { label: "Karibu Kenya 🇰🇪", href: "/planner" },
+];
 
 export default function Footer() {
   return (
     <>
       <BeadStrip height={20} />
       <footer className="bg-ink text-cream">
-        <div className="px-14 pt-16 pb-12">
+        <div className="px-8 md:px-14 pt-16 pb-12">
           {/* Headline */}
           <div className="border-t border-cream/20 pt-12 mb-12">
             <h3 className="font-serif text-[clamp(40px,6vw,88px)] leading-[0.94] tracking-[-0.03em] font-normal">
@@ -31,7 +63,9 @@ export default function Footer() {
                   <div className="w-[12px] h-[32px] bg-kred" />
                   <div className="w-[12px] h-[32px] bg-kgreen" />
                 </div>
-                <span className="font-serif text-[28px] italic font-normal">MyKenya</span>
+                <Link href="/" className="font-serif text-[28px] italic font-normal text-cream hover:opacity-80 transition-opacity">
+                  MyKenya
+                </Link>
               </div>
               <p className="font-sans text-sm text-cream/60 leading-relaxed max-w-[220px]">
                 Curated Kenya travel — local intelligence, AI-assisted logistics, finished by humans.
@@ -44,10 +78,21 @@ export default function Footer() {
                 <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-sand mb-4">{group}</p>
                 <ul className="space-y-2">
                   {items.map((item) => (
-                    <li key={item}>
-                      <a href="#" className="font-sans text-sm text-cream/70 hover:text-cream transition-colors">
-                        {item}
-                      </a>
+                    <li key={item.label}>
+                      {item.href.startsWith("http") ? (
+                        <a
+                          href={item.href}
+                          target={item.href.startsWith("https://wa.me") ? "_blank" : undefined}
+                          rel="noopener noreferrer"
+                          className="font-sans text-sm text-cream/70 hover:text-cream transition-colors"
+                        >
+                          {item.label}
+                        </a>
+                      ) : (
+                        <Link href={item.href} className="font-sans text-sm text-cream/70 hover:text-cream transition-colors">
+                          {item.label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -55,7 +100,6 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* BeadStrip above copyright (from handoff) */}
           <div className="mt-10">
             <BeadStrip height={12} />
           </div>
@@ -65,10 +109,16 @@ export default function Footer() {
             <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-cream/40">
               © MyKenya 2026 · Made in Nairobi &amp; Istanbul
             </span>
-            <div className="flex gap-6">
-              {["Instagram", "WhatsApp", "Newsletter", "Karibu Kenya 🇰🇪"].map((item) => (
-                <a key={item} href="#" className="font-mono text-[10px] tracking-[0.1em] uppercase text-cream/40 hover:text-cream/70 transition-colors">
-                  {item}
+            <div className="flex flex-wrap gap-6">
+              {SOCIAL.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  className="font-mono text-[10px] tracking-[0.1em] uppercase text-cream/40 hover:text-cream/70 transition-colors"
+                >
+                  {item.label}
                 </a>
               ))}
             </div>

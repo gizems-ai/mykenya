@@ -4,10 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 import { BeadStrip } from "./BeadStrip";
 
-const NAV_LINKS = ["Destinations", "Programs", "Experiences", "Journal", "Planner"];
+const NAV_LINKS = ["Destinations", "Stays", "Experiences", "Journal", "Planner"];
 const NAV_HREFS: Record<string, string> = {
-  Destinations: "/destinations",
-  Programs: "/stays",
+  Destinations: "/cities/nairobi",
+  Stays: "/stays",
   Experiences: "/experiences",
   Journal: "/journal",
   Planner: "/planner",

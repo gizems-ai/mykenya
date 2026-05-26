@@ -17,7 +17,7 @@ export function WhyTrustUs() {
                 alt="Selin Tapıcı — Founder"
                 fill
                 className="object-cover object-top"
-                unoptimized
+               
               />
             </div>
             {/* Badge */}

@@ -101,7 +101,7 @@ function LeadForm({ onSubmit }: { onSubmit: (d: { name: string; email: string })
 }
 
 function WhatsAppCard() {
-  const href = "https://wa.me/254700000000?text=Hi%20Selin%2C%20I%27d%20love%20to%20plan%20my%20Kenya%20trip%20with%20you.";
+  const href = "https://wa.me/905323343613?text=Hi%20Selin%2C%20I%27d%20love%20to%20plan%20my%20Kenya%20trip%20with%20you.";
   return (
     <div style={{ background: "white", borderRadius: 16, padding: 20, border: `1px solid ${P.line}`, textAlign: "center" }}>
       <p style={{ fontFamily: "var(--font-dm-sans), sans-serif", fontSize: 14, fontWeight: 600, color: P.ink, marginBottom: 12 }}>
@@ -198,7 +198,7 @@ export default function SelinChatDrawer() {
   }, [handleSend]);
 
   const handleLeadSubmit = async ({ name, email }: { name: string; email: string }) => {
-    const waUrl = `https://wa.me/254700000000?text=${encodeURIComponent(`Hi Selin, my name is ${name} (${email}). I've been exploring Kenya stays and would love your help planning a trip.`)}`;
+    const waUrl = `https://wa.me/905323343613?text=${encodeURIComponent(`Hi Selin, my name is ${name} (${email}). I've been exploring Kenya stays and would love your help planning a trip.`)}`;
     setShowLeadForm(false);
     setQualified(true);
     const confirmMsg: Message = { id: `s${Date.now()}`, role: "selin", content: `Thanks, ${name}! I've passed your details to Selin — she'll send you a personal shortlist within the hour. You can also reach her directly on WhatsApp below.` };

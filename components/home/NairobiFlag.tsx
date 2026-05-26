@@ -10,7 +10,7 @@ export function NairobiFlag() {
           alt="Nairobi"
           fill
           className="object-cover"
-          unoptimized
+         
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         <div className="absolute top-4 left-4 bg-cream/90 font-mono text-[10px] tracking-[0.12em] uppercase px-3 py-1.5 rounded-full">

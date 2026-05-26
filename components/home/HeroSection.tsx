@@ -72,7 +72,7 @@ export function HeroSection() {
               alt="Masai Mara"
               fill
               className="object-cover"
-              unoptimized
+             
             />
             {/* Caption pill */}
             <div className="absolute bottom-4 left-4 bg-cream/90 font-mono text-[10px] tracking-[0.12em] uppercase px-3 py-1.5 rounded-full">
@@ -93,7 +93,7 @@ export function HeroSection() {
                 alt="Diani beach"
                 fill
                 className="object-cover"
-                unoptimized
+               
               />
             </div>
           </div>

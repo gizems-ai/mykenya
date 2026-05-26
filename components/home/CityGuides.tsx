@@ -66,7 +66,7 @@ export function CityGuides() {
                 alt={guide.city}
                 fill
                 className="object-cover"
-                unoptimized
+               
               />
             </div>
           </div>

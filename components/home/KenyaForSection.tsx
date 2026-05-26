@@ -38,7 +38,7 @@ export function KenyaForSection() {
                   alt={item.who}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  unoptimized
+                 
                 />
                 <span
                   className="absolute top-3 left-3 bg-cream font-mono text-[9px] tracking-[0.12em] uppercase px-2 py-1"

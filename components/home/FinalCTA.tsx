@@ -27,13 +27,13 @@ export function FinalCTA() {
           </p>
           <div className="flex flex-wrap gap-4 mb-8">
             <a
-              href="#"
+              href="/planner"
               className="bg-cream text-kred font-sans text-sm font-bold tracking-[0.08em] uppercase px-8 py-4 rounded-full hover:opacity-90 transition-opacity"
             >
               Start Your Journey →
             </a>
             <a
-              href="https://wa.me/254700000000"
+              href="https://wa.me/905323343613"
               className="border border-cream text-cream font-sans text-sm font-bold tracking-[0.08em] uppercase px-8 py-4 rounded-full hover:bg-cream hover:text-kred transition-colors"
             >
               WhatsApp Selin ↗

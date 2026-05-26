@@ -277,7 +277,7 @@ export default function ItineraryDetailClient({ slug }: { slug: string }) {
               Customize this journey →
             </a>
             <a
-              href={`https://wa.me/254700000000?text=${encodeURIComponent(`Hi Selin — I'm interested in the "${program.title}" programme. Can we talk through the dates?`)}`}
+              href={`https://wa.me/905323343613?text=${encodeURIComponent(`Hi Selin — I'm interested in the "${program.title}" programme. Can we talk through the dates?`)}`}
               target="_blank" rel="noopener noreferrer"
               style={{
                 display: "inline-flex", alignItems: "center", gap: 8,

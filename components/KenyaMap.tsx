@@ -28,7 +28,7 @@ export function KenyaMap({ active, onSelect }: KenyaMapProps) {
         alt="Map of Kenya"
         fill
         className="object-contain"
-        unoptimized
+       
       />
       {PINS.map(({ name, px, py }) => {
         const isActive = name === active;
