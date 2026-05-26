@@ -12,9 +12,10 @@ export const EXPERIENCE_DETAIL: Experience[] = [
   { tag:"03", slug:"wellness", title:"Wellness", kicker:"Slow systems", lead:"Coastal retreats and bush spas — the gentle reset.", blurb:"We pair clinical rigor with a deeper, slower rhythm: yoga at sunrise, Ayurveda by the reef, breathwork under acacia trees.", region:"Watamu · Naivasha · Laikipia", days:"5–14 nights", from:"from $420 / night", img:["https://images.unsplash.com/photo-1545389336-cf090694435e?w=900&q=80&auto=format&fit=crop","https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=900&q=80&auto=format&fit=crop"], highlights:["Daily yoga with ocean view","Ayurveda-trained therapists","Forest bath in Karura","Digital-detox bush stays"], stays:["Medina Palms","Enashipai · Naivasha","Segera Retreat"], season:[4,4,3,2,2,4,4,4,5,5,4,4], filterTag:"Wellness" },
   { tag:"04", slug:"honeymoon", title:"Honeymoons", kicker:"For two", lead:"Bush, beach, and the quiet between.", blurb:"Our most-requested arc: a private guide in the Mara, a bush flight to Lamu, a stone house on the water. We tune every transfer so you never see the seams.", region:"Mara → Lamu (typical)", days:"8–12 nights", from:"from $9,400 / couple", img:["https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=900&q=80&auto=format&fit=crop","https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=900&q=80&auto=format&fit=crop"], highlights:["Private vehicle, end to end","Bush flight, no overland","Sunset dhow with chef","In-villa massage on arrival"], stays:["Sala's Camp","Peponi Hotel · Lamu","Sasaab · Samburu"], season:[5,4,3,2,2,3,4,5,5,4,3,4], filterTag:"Romance" },
   { tag:"05", slug:"nomad", title:"Digital Nomad Stays", kicker:"Long-stay", lead:"Homes with fibre, communities with rhythm.", blurb:"For the month-or-more crowd: vetted villas with proper fibre, co-working communities, a SIM card on your pillow, and a concierge who handles the residency paperwork.", region:"Nairobi · Diani · Watamu", days:"30–90 nights", from:"from $2,800 / month", img:["https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80&auto=format&fit=crop","https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=900&q=80&auto=format&fit=crop"], highlights:["300+ Mbps verified","Co-working membership","Maid + chef on call","Visa paperwork handled"], stays:["Karen long-stays","Diani Beachfront villas","Watamu studios"], season:[4,4,4,3,3,4,5,5,5,4,4,4], filterTag:"Long-stay" },
-  { tag:"06", slug:"family", title:"Family Journeys", kicker:"With kids", lead:"Logistics simplified, kid-tested camps.", blurb:"Giraffe Manor breakfasts, family suites with pools, doctors on call, and an itinerary that respects nap windows. We've sent 240+ families — we know what breaks.", region:"Nairobi · Mara · Watamu", days:"8–12 nights", from:"from $720 / day · family", img:["https://images.pexels.com/photos/35648217/pexels-photo-35648217.jpeg?auto=compress&cs=tinysrgb&w=900","https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=900&q=80&auto=format&fit=crop"], highlights:["Family-suite-only camps","Pools at every base","Kid-safe game drives","Pediatrician on call"], stays:["Giraffe Manor","Hemingways Watamu","Mara Bushtops"], season:[4,4,3,2,2,4,5,5,5,4,3,4], filterTag:"With Kids" },
+  { tag:"06", slug:"family", title:"Family Journeys", kicker:"With kids", lead:"Logistics simplified, kid-tested camps.", blurb:"Giraffe Manor breakfasts, family suites with pools, doctors on call, and an itinerary that respects nap windows. We've sent 240+ families — we know what breaks.", region:"Nairobi · Mara · Watamu", days:"8–12 nights", from:"from $720 / day · family", img:["/single-mother-safari.jpg","/travel-family.jpg"], highlights:["Family-suite-only camps","Pools at every base","Kid-safe game drives","Pediatrician on call"], stays:["Giraffe Manor","Hemingways Watamu","Mara Bushtops"], season:[4,4,3,2,2,4,5,5,5,4,3,4], filterTag:"With Kids" },
   { tag:"07", slug:"villa", title:"Private Villas", kicker:"Whole-house", lead:"Hand-picked houses with crew.", blurb:"From a six-bed stone house in Lamu Old Town to a cliff-side villa above Watamu's marine park — staffed, stocked, and tuned for groups of 4 to 14.", region:"Lamu · Diani · Karen", days:"5–14 nights", from:"from $1,200 / night", img:["https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=900&q=80&auto=format&fit=crop","https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=900&q=80&auto=format&fit=crop"], highlights:["Full staff — chef, house, security","Pre-stocked groceries","Driver on standby","Private dhow on call"], stays:["Forodhani House","Alfajiri Villas","Robinson Island"], season:[5,5,4,2,2,3,4,4,4,4,4,5], filterTag:"Coast" },
   { tag:"08", slug:"photo", title:"Photography", kicker:"Right light", lead:"Guides, hides, and the right hours.", blurb:"Built with two former National Geographic guides — golden-hour vehicle setups, custom hides, full-frame days, and a backup hard-drive workflow at base camp.", region:"Mara · Samburu · Lamu", days:"6–10 nights", from:"from $980 / night", img:["https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=900&q=80&auto=format&fit=crop","https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=900&q=80&auto=format&fit=crop"], highlights:["Specialist photo guides","Custom mounts + bean bags","Drive-up hides","On-site editing suite"], stays:["Mara Plains Camp","Saruni Samburu","Lamu House"], season:[3,3,2,2,2,3,5,5,5,4,3,3], filterTag:"Wild" },
+  { tag:"09", slug:"bucket-list", title:"Bucket List", kicker:"Giraffe Manor & beyond", lead:"The giraffe at the window, the balloon at dawn, the orphaned elephant — properly arranged.", blurb:"Some Kenya moments transcend travel. We've spent years getting early access, preferred bookings, and the best room in the house for these iconic experiences — so you don't have to leave it to chance.", region:"Nairobi · Mara · Laikipia", days:"6–10 nights", from:"from $1,400 / night", img:["/giraffe-manor.jpg","https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=900&q=80&auto=format&fit=crop"], highlights:["Giraffe Manor breakfast booking","Hot-air balloon · Mara dawn","DSWT Elephant Orphanage","Ol Pejeta rhino conservancy"], stays:["Giraffe Manor","Angama Mara","Ol Pejeta conservancy"], season:[4,4,3,2,2,4,5,5,5,4,3,4], filterTag:"Bucket List" },
 ];
 
 export type DetailCopy = {
@@ -341,7 +342,7 @@ export const DETAIL_COPY: Record<string, DetailCopy> = {
       { who: "The Nakamura family · 4 · 2024", body: "My teenagers said they'd prefer Ibiza. By the end of day one in the Mara they were asking about coming back. Kenya wins the argument every time." },
     ],
     lodges: [
-      { name:"Giraffe Manor", region:"Langata · Nairobi", note:"The Rothschild giraffes at breakfast. You know this one. The booking is the hard part — we get it.", img:"https://images.pexels.com/photos/35648217/pexels-photo-35648217.jpeg?auto=compress&cs=tinysrgb&w=900" },
+      { name:"Giraffe Manor", region:"Langata · Nairobi", note:"The Rothschild giraffes at breakfast. You know this one. The booking is the hard part — we get it.", img:"/giraffe-manor.jpg" },
       { name:"Hemingways Watamu", region:"Watamu Marine Park", note:"Kids club, house reef, pool, supervised snorkeling. Family travel doesn't get easier.", img:"https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=900&q=80&auto=format&fit=crop" },
       { name:"Mara Bushtops", region:"Masai Mara", note:"Family suites, a pool with a view of the plains, kids menu on the full restaurant. One of the best family camps in the Mara.", img:"https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=900&q=80&auto=format&fit=crop" },
       { name:"Sanctuary Olonana", region:"Mara North Conservancy", note:"Tented suites on the river. Family suites connect. The hippos at night are the children's favourite audio.", img:"https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=900&q=80&auto=format&fit=crop" },
@@ -349,7 +350,7 @@ export const DETAIL_COPY: Record<string, DetailCopy> = {
       { name:"Neptune Beach Resort", region:"Diani Beach", note:"Family resort on the best south coast beach. Pools, watersports, kids club, kids-menu standard.", img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80&auto=format&fit=crop" },
     ],
     gallery: [
-      "https://images.pexels.com/photos/35648217/pexels-photo-35648217.jpeg?auto=compress&cs=tinysrgb&w=900",
+      "/giraffe-manor.jpg",
       "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=900&q=80&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=900&q=80&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=900&q=80&auto=format&fit=crop",
@@ -466,6 +467,60 @@ export const DETAIL_COPY: Record<string, DetailCopy> = {
     ],
     relatedSlugs: ["safari","honeymoon","wellness","beach"],
   },
+
+  "bucket-list": {
+    parent: "Giraffe Manor & beyond",
+    heroRegion: "Bucket List Kenya · Nairobi · Mara · Laikipia",
+    heroCaption: "Langata · Giraffe Manor",
+    ctaCopy: "Build my bucket list trip",
+    intro: "Some experiences in Kenya have earned the word iconic honestly. The Rothschild giraffes leaning into the dining room at Giraffe Manor. The dawn light over the Mara from a balloon at 1,000 feet. The baby elephants at the DSWT orphanage, forty minutes from Nairobi. We've spent years building the relationships that get you these moments — not the standard version, but the version that stays with you.",
+    why: "The difference between doing Giraffe Manor and doing it properly is the room, the timing, and the brief. We get you the ground-floor corner suite where the giraffes press their noses to the glass at breakfast. We make sure the Mara balloon is a private flight, not a shared one. We tell the elephant orphanage team that you're coming — and they introduce you by name to the baby they've had the longest.",
+    whyHeadline: "The iconic moments are real. Getting them right is the work.",
+    bestMonths: "Jun – Oct · Dec – Jan", groupSize: "2 – 8 travellers", pace: "Curated · unhurried", altitude: "1,700m Nairobi · 1,500m Mara",
+    activities: [
+      { title: "Giraffe Manor breakfast", desc: "The Rothschild giraffes arrive at 8am. We book the ground-floor suite where they press against the window. There is no other experience quite like this." },
+      { title: "Hot-air balloon · Mara", desc: "Private basket at dawn, one hour above the plains. Champagne breakfast in the bush after landing. We book the pilot, not the operator." },
+      { title: "DSWT Elephant Orphanage", desc: "The David Sheldrick Wildlife Trust opens its Nairobi orphanage at 11am daily. Baby elephants in a muddy pen, 40 minutes from the city centre. A perfect second morning." },
+      { title: "Ol Pejeta rhino conservancy", desc: "Home to the last two northern white rhinos on earth. Walking with a ranger to within twenty metres is a different experience from a vehicle." },
+    ],
+    sampleDay: [
+      { t: "06:45", title: "Giraffe Manor morning", note: "The giraffes arrive for their feed before 8am. You're in the ground-floor room. They come to the window." },
+      { t: "08:00", title: "Breakfast", note: "The full dining room, giraffes present. Other guests look at their phones. You don't." },
+      { t: "10:00", title: "Transfer to Nairobi", note: "Elephant Orphanage opens at 11am. Your driver has been briefed on timing." },
+      { t: "11:00", title: "DSWT Orphanage", note: "Baby elephants in the mud. Named, known, each with a keeper. Forty-five minutes that no one forgets." },
+      { t: "13:30", title: "Lunch in Karen", note: "Talisman, Cultiva, or the hotel. A proper sit-down before the afternoon drive." },
+      { t: "16:00", title: "Bush flight to the Mara", note: "Afternoon charter. Your guide meets you at the airstrip. Camp is fifteen minutes." },
+      { t: "18:30", title: "Sundowner", note: "First evening in the Mara. The balloon briefing happens here — 4:30am tomorrow." },
+      { t: "04:30", title: "Balloon morning", note: "Your guide drives you to the launch point. The balloon is yours. Dawn begins at 5:45 above the plains." },
+    ],
+    forWhom: ["First-time Kenya visitors who want the marquee moments","Anniversary and milestone travellers","Parents who want the trip their children will never forget","Anyone who's said 'I've always wanted to do Giraffe Manor'"],
+    notForWhom: ["Purists who find iconic experiences overrated","Deep bush seekers — this has Nairobi built in","Those on a strict budget (Giraffe Manor is priced as a bucket list property)","Anyone who needs everything to be undiscovered"],
+    practical: [["Visa","eVisa online · 72h"],["Giraffe Manor","Book 6–12 months out in peak season — we hold allocations"],["Balloon","Weather-dependent · we have a backup plan"],["Currency","USD · KES on arrival"],["Plug","Type G · UK style"],["Medical","Nairobi has top-tier private hospitals — useful to know"]],
+    pack: ["One smart outfit for Giraffe Manor dinner — it's a house, not a restaurant","Neutral layers for the Mara and balloon (cold at 4:30am, warm by 9am)","A camera — this is the trip where you'll want one","Closed shoes for Ol Pejeta walking","Something for the kids — DSWT sells adoption certificates at the gate","Leave the white clothing — the Nairobi dust is real"],
+    honest: [["Giraffe Manor books out fast","We hold preferred allocations but peak school-holiday dates can be 12 months out. Come to us early."],["The balloon is weather-dependent","The Mara gets wind. We book with reputable operators who have professional pilots and a standby plan. We've never had a full cancellation — but we brief you on the possibility."],["Ol Pejeta requires a day","It's four hours from Nairobi. We recommend an overnight at the conservancy rather than a day trip — the morning walking session with the rhinos is the experience, not the drive-through."],["The orphanage is 45 minutes","Any more time than that and it becomes overwhelming — for you and the elephants. We book the visit and the exit at the right moment."]],
+    quotes: [
+      { who: "Lena & Marc · 25th anniversary · 2025", body: "I've been travelling for 30 years. The giraffe's nose on the glass at breakfast, six inches from my face — nothing I've seen before or since. We extended the stay by two nights." },
+      { who: "The Bergström family · 5 · 2025", body: "My daughter is nine. She now tells everyone her best friend is a baby elephant named Naledi. The DSWT adoption certificate is framed in her bedroom." },
+      { who: "James · solo · 2024", body: "The balloon pilot turned off the gas burner and we floated in complete silence for four minutes above a lion pride. That silence is what I came for." },
+    ],
+    lodges: [
+      { name:"Giraffe Manor", region:"Langata · Nairobi", note:"Twelve rooms in a 1930s manor house. The Rothschild giraffes arrive at feeding time. We know which room.", img:"/giraffe-manor.jpg" },
+      { name:"Angama Mara", region:"Mara Triangle · Nairobi", note:"The balloon launch partner. Glass-fronted tents on the Oloololo escarpment. The best post-balloon champagne breakfast view in Africa.", img:"https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=900&q=80&auto=format&fit=crop" },
+      { name:"Ol Pejeta Bush Camp", region:"Ol Pejeta Conservancy · Laikipia", note:"Eight tents inside the rhino conservancy. Walking safaris with armed rangers. The last two northern white rhinos are 400 metres from the dining room.", img:"https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=900&q=80&auto=format&fit=crop" },
+      { name:"Hemingways Nairobi", region:"Karen · Nairobi", note:"The best urban base for the Nairobi experiences. Rooftop bar, excellent service, five minutes from Giraffe Manor.", img:"https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=900&q=80&auto=format&fit=crop" },
+      { name:"Sala's Camp", region:"Sand River · Mara", note:"Six tents on the migration crossing — the most intimate camp in the Mara and our preferred balloon-morning base.", img:"https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=900&q=80&auto=format&fit=crop" },
+      { name:"Ol Donyo Lodge", region:"Chyulu Hills", note:"Star beds above the bush. The bucket list doesn't have to end in Nairobi — Ol Donyo adds the final night under an open sky.", img:"https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=900&q=80&auto=format&fit=crop" },
+    ],
+    gallery: [
+      "/giraffe-manor.jpg",
+      "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=900&q=80&auto=format&fit=crop",
+      "/single-mother-safari.jpg",
+      "https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=900&q=80&auto=format&fit=crop",
+    ],
+    relatedSlugs: ["family","safari","honeymoon","photo"],
+  },
 };
 
 export type JournalEntry = {
@@ -479,7 +534,7 @@ export const JOURNAL_ENTRIES: JournalEntry[] = [
   { n:"03", kicker:"Safety", title:"What women travelers actually need to know about Kenya", excerpt:"Practical, plain, no scare-quotes. Where to walk alone after dark, where not to, what to wear in Lamu Old Town, and the WhatsApp numbers we keep on speed dial.", read:"11 min", author:"Wanjiku Mwangi", date:"Feb · 2026", img:"https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=900&q=80&auto=format&fit=crop", accent:"black" },
   { n:"04", kicker:"Versus", title:"Diani or Watamu — choosing your stretch of coast", excerpt:"Honeymooners ask us this every week. We did the homework: tide times, kid-friendliness, where you can walk to dinner, where you'd better book the driver.", read:"6 min", author:"Hassan Ali", date:"Jan · 2026", img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80&auto=format&fit=crop", accent:"red" },
   { n:"05", kicker:"Field notes", title:"A weekend in Iten — running where the world's fastest run", excerpt:"2,400m, red dirt tracks at dawn, 24 Kenyans you've never heard of who could win the Vienna marathon. A two-day visit, slowly.", read:"7 min", author:"Tom O'Neill", date:"Jan · 2026", img:"https://images.pexels.com/photos/2402777/pexels-photo-2402777.jpeg?auto=compress&cs=tinysrgb&w=900", accent:"green" },
-  { n:"06", kicker:"Guide", title:"Single-mother safari — how we plan it", excerpt:"The hidden tax of solo travel with kids isn't money — it's logistics. Here's the framework we use to make it feel like a real holiday, not a project.", read:"9 min", author:"Selin Tapıcı", date:"Dec · 2025", img:"https://images.pexels.com/photos/35648217/pexels-photo-35648217.jpeg?auto=compress&cs=tinysrgb&w=900", accent:"sand" },
+  { n:"06", kicker:"Guide", title:"Single-mother safari — how we plan it", excerpt:"The hidden tax of solo travel with kids isn't money — it's logistics. Here's the framework we use to make it feel like a real holiday, not a project.", read:"9 min", author:"Selin Tapıcı", date:"Dec · 2025", img:"/single-mother-safari.jpg", accent:"sand" },
   { n:"07", kicker:"Conversation", title:"Letter from a Maasai guide — twenty years on the plains", excerpt:"James has tracked the same prides through three generations. We sat with him under a fig tree for an afternoon and asked what the bush is teaching him now.", read:"12 min", author:"James ole Kimani", date:"Dec · 2025", img:"https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=900&q=80&auto=format&fit=crop", accent:"black" },
   { n:"08", kicker:"Versus", title:"Mara conservancies, ranked the way we'd actually pick", excerpt:"Olare Motorogi vs Naboisho vs Mara North vs Mara Triangle. Vehicle rules, density, off-road, walking allowed, the lot. The cheat-sheet we keep on our desk.", read:"9 min", author:"Selin Tapıcı", date:"Nov · 2025", img:"https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=900&q=80&auto=format&fit=crop", accent:"red" },
   { n:"09", kicker:"Field notes", title:"The dhow boys of Lamu — sunset is at six", excerpt:"How the boats are crewed, how the sails are tied, what to tip, and why the best ones now book up four days out. Plus the captain we always call first.", read:"5 min", author:"Hassan Ali", date:"Nov · 2025", img:"https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=900&q=80&auto=format&fit=crop", accent:"green" },
@@ -489,5 +544,5 @@ export const JOURNAL_ENTRIES: JournalEntry[] = [
 ];
 
 export const JOURNAL_FILTERS = ["Latest", "Guides", "Field notes", "Versus", "Safety", "Conversation"];
-export const EXPERIENCE_FILTERS = ["All", "Wild", "Coast", "Wellness", "Romance", "With Kids", "Long-stay"];
+export const EXPERIENCE_FILTERS = ["All", "Wild", "Coast", "Wellness", "Romance", "With Kids", "Long-stay", "Bucket List"];
 export const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
