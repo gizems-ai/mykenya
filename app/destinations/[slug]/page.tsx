@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { NAIROBI, NEIGHBORING_GUIDES } from "@/lib/cities";
+import { CITIES_MAP, NEIGHBORS } from "@/lib/cities";
 
 const CityGuideClient = dynamic(
   () => import("@/components/cities/CityGuideClient"),
@@ -7,7 +7,7 @@ const CityGuideClient = dynamic(
 );
 
 export function generateStaticParams() {
-  return [{ slug: "nairobi" }];
+  return Object.keys(CITIES_MAP).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -15,10 +15,10 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-  const name = params.slug.charAt(0).toUpperCase() + params.slug.slice(1);
+  const city = CITIES_MAP[params.slug] ?? CITIES_MAP.nairobi;
   return {
-    title: `${name} City Guide · MyKenya`,
-    description: `Curated guide to ${name} — neighborhoods, where to eat, where to stay, and 48 hours done properly.`,
+    title: `${city.city} City Guide · MyKenya`,
+    description: `Curated guide to ${city.city} — neighborhoods, where to eat, where to stay, and 48 hours done properly.`,
   };
 }
 
@@ -27,7 +27,7 @@ export default function DestinationCityPage({
 }: {
   params: { slug: string };
 }) {
-  // Extend with a CITIES_MAP lookup when more cities are added
-  const cityData = NAIROBI;
-  return <CityGuideClient city={cityData} neighboring={NEIGHBORING_GUIDES} />;
+  const cityData = CITIES_MAP[params.slug] ?? CITIES_MAP.nairobi;
+  const neighboring = NEIGHBORS[params.slug] ?? NEIGHBORS.nairobi;
+  return <CityGuideClient city={cityData} neighboring={neighboring} />;
 }
