@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
-export default function DestinationsIndex() {
-  redirect("/cities/nairobi");
+export default function DestinationsPage() {
+  redirect("/cities");
 }

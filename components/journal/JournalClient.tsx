@@ -27,6 +27,25 @@ function accentText(accent: string) {
 // ─── Component ───────────────────────────────────────────────────────────────
 export default function JournalClient() {
   const [filter, setFilter] = useState("Latest");
+  const [nlName, setNlName] = useState("");
+  const [nlEmail, setNlEmail] = useState("");
+  const [nlState, setNlState] = useState<"idle" | "sending" | "done" | "error">("idle");
+
+  async function handleSubscribe(e: React.FormEvent) {
+    e.preventDefault();
+    if (!nlEmail) return;
+    setNlState("sending");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: nlName, email: nlEmail }),
+      });
+      setNlState(res.ok ? "done" : "error");
+    } catch {
+      setNlState("error");
+    }
+  }
 
   const visible = filter === "Latest"
     ? JOURNAL_ENTRIES
@@ -431,46 +450,81 @@ export default function JournalClient() {
               fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase",
               color: "rgba(15,15,14,0.4)", marginBottom: 20,
             }}>§ The Letter · vol. 02</div>
-            <div style={{ marginBottom: 16 }}>
-              <input
-                type="text"
-                placeholder="Your name"
-                style={{
-                  width: "100%", boxSizing: "border-box",
+
+            {nlState === "done" ? (
+              <div style={{ padding: "24px 0" }}>
+                <div style={{
                   fontFamily: "var(--font-newsreader), Georgia, serif",
-                  fontSize: 20, color: P.ink,
-                  background: "transparent",
-                  border: "none", borderBottom: `1.5px solid ${P.ink}`,
-                  outline: "none", padding: "8px 0",
-                  marginBottom: 16,
-                }}
-              />
-              <input
-                type="email"
-                placeholder="your@email.com"
-                style={{
-                  width: "100%", boxSizing: "border-box",
-                  fontFamily: "var(--font-newsreader), Georgia, serif",
-                  fontSize: 20, color: P.ink,
-                  background: "transparent",
-                  border: "none", borderBottom: `1.5px solid ${P.ink}`,
-                  outline: "none", padding: "8px 0",
-                }}
-              />
-            </div>
-            <button style={{
-              fontFamily: "var(--font-dm-sans), sans-serif",
-              fontSize: 13, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase",
-              padding: "13px 24px", borderRadius: 100,
-              background: P.ink, color: P.cream, border: "none",
-              cursor: "pointer", marginTop: 16, marginBottom: 14,
-              display: "block",
-            }}>Send me The Letter →</button>
-            <div style={{
-              fontFamily: "var(--font-dm-mono), monospace",
-              fontSize: 10, letterSpacing: "0.15em",
-              color: "rgba(15,15,14,0.4)",
-            }}>No algorithms. One letter. Every 4 weeks.</div>
+                  fontSize: 28, fontWeight: 400, color: P.kgreen, marginBottom: 10,
+                }}>You&rsquo;re on the list.</div>
+                <p style={{
+                  fontFamily: "var(--font-dm-sans), sans-serif",
+                  fontSize: 14, color: "rgba(15,15,14,0.6)", lineHeight: 1.5,
+                }}>
+                  The next letter goes out in a few weeks. Selin writes it from wherever she is that month.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubscribe}>
+                <div style={{ marginBottom: 16 }}>
+                  <input
+                    type="text"
+                    placeholder="Your name"
+                    value={nlName}
+                    onChange={(e) => setNlName(e.target.value)}
+                    style={{
+                      width: "100%", boxSizing: "border-box",
+                      fontFamily: "var(--font-newsreader), Georgia, serif",
+                      fontSize: 20, color: P.ink,
+                      background: "transparent",
+                      border: "none", borderBottom: `1.5px solid ${P.ink}`,
+                      outline: "none", padding: "8px 0", marginBottom: 16,
+                    }}
+                  />
+                  <input
+                    type="email"
+                    placeholder="your@email.com"
+                    value={nlEmail}
+                    onChange={(e) => setNlEmail(e.target.value)}
+                    required
+                    style={{
+                      width: "100%", boxSizing: "border-box",
+                      fontFamily: "var(--font-newsreader), Georgia, serif",
+                      fontSize: 20, color: P.ink,
+                      background: "transparent",
+                      border: "none", borderBottom: `1.5px solid ${P.ink}`,
+                      outline: "none", padding: "8px 0",
+                    }}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={nlState === "sending"}
+                  style={{
+                    fontFamily: "var(--font-dm-sans), sans-serif",
+                    fontSize: 13, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase",
+                    padding: "13px 24px", borderRadius: 100,
+                    background: P.ink, color: P.cream, border: "none",
+                    cursor: nlState === "sending" ? "wait" : "pointer",
+                    marginTop: 16, marginBottom: 14, display: "block",
+                    opacity: nlState === "sending" ? 0.6 : 1,
+                  }}
+                >
+                  {nlState === "sending" ? "Sending…" : "Send me The Letter →"}
+                </button>
+                {nlState === "error" && (
+                  <div style={{
+                    fontFamily: "var(--font-dm-mono), monospace",
+                    fontSize: 10, color: P.kred, marginBottom: 8,
+                  }}>Something went wrong — try again or WhatsApp Selin directly.</div>
+                )}
+                <div style={{
+                  fontFamily: "var(--font-dm-mono), monospace",
+                  fontSize: 10, letterSpacing: "0.15em",
+                  color: "rgba(15,15,14,0.4)",
+                }}>No algorithms. One letter. Every 4 weeks.</div>
+              </form>
+            )}
           </div>
         </div>
       </section>

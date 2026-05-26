@@ -105,7 +105,7 @@ export function WhatsIncluded() {
           </div>
           <div className="flex items-center justify-between">
             <span className="font-mono text-[10px] tracking-[0.1em] uppercase opacity-50">concierge · Selin</span>
-            <a href="#" className="font-mono text-[10px] tracking-[0.1em] uppercase text-kgreen">WhatsApp ↗</a>
+            <a href="https://wa.me/905323343613" target="_blank" rel="noopener noreferrer" className="font-mono text-[10px] tracking-[0.1em] uppercase text-kgreen">WhatsApp ↗</a>
           </div>
         </div>
       </div>
