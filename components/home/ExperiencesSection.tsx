@@ -1,14 +1,14 @@
 import Link from "next/link";
 
 const EXPERIENCES = [
-  { tag: "01", title: "Safari", note: "Private camps, ranger-led drives." },
-  { tag: "02", title: "Beach Escapes", note: "Indian Ocean barefoot luxury." },
-  { tag: "03", title: "Wellness", note: "Coastal retreats and bush spas." },
-  { tag: "04", title: "Honeymoons", note: "Bush, beach, and quiet between." },
-  { tag: "05", title: "Digital Nomad Stays", note: "Long-stay homes with fibre." },
-  { tag: "06", title: "Family Journeys", note: "Logistics simplified, kid-tested." },
-  { tag: "07", title: "Private Villas", note: "Hand-picked houses with crew." },
-  { tag: "08", title: "Photography", note: "Light, guides, the right hours." },
+  { tag: "01", title: "Safari", note: "Private camps, ranger-led drives.", slug: "safari" },
+  { tag: "02", title: "Beach Escapes", note: "Indian Ocean barefoot luxury.", slug: "beach" },
+  { tag: "03", title: "Wellness", note: "Coastal retreats and bush spas.", slug: "wellness" },
+  { tag: "04", title: "Honeymoons", note: "Bush, beach, and quiet between.", slug: "honeymoon" },
+  { tag: "05", title: "Digital Nomad Stays", note: "Long-stay homes with fibre.", slug: "nomad" },
+  { tag: "06", title: "Family Journeys", note: "Logistics simplified, kid-tested.", slug: "family" },
+  { tag: "07", title: "Private Villas", note: "Hand-picked houses with crew.", slug: "villa" },
+  { tag: "08", title: "Photography", note: "Light, guides, the right hours.", slug: "photo" },
 ];
 
 const ACCENT_COLORS = ["#C8302C", "#1B5E3F", "#0F0F0E", "#E2D2AE"];
@@ -42,7 +42,7 @@ export function ExperiencesSection() {
           return (
             <Link
               key={e.tag}
-              href="/experiences"
+              href={`/experiences/${e.slug}`}
               style={{
                 background: accent,
                 color: isLight ? "#0F0F0E" : "#FDFBF6",

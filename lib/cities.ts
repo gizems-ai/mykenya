@@ -187,7 +187,7 @@ export const MOMBASA: CityData = {
   },
   galleryStrip: [
     "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=900&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=900&q=80&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=900&q=80&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=900&q=80&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=900&q=80&auto=format&fit=crop",
@@ -316,12 +316,12 @@ export const LAMU: CityData = {
     ["Currency", "KES · limited card use"],
   ],
   hero: {
-    img: "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=1400&q=80&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=1400&q=80&auto=format&fit=crop",
     caption: "Lamu waterfront · dhow at anchor · early morning",
   },
   galleryStrip: [
     "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=900&q=80&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=900&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=900&q=80&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=900&q=80&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=900&q=80&auto=format&fit=crop",
@@ -333,7 +333,7 @@ export const LAMU: CityData = {
       name: "Lamu Town",
       sub: "UNESCO · carved doors · the museum",
       body: "The island's main settlement. A UNESCO World Heritage Site that functions as a living neighbourhood, not a museum. Narrow lanes, donkey dung, and the occasional cat that owns the intersection.",
-      img: "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=900&q=80&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=900&q=80&auto=format&fit=crop",
       accent: "black",
     },
     {
@@ -388,7 +388,7 @@ export const LAMU: CityData = {
       name: "The Majlis",
       area: "Manda Island · exclusive",
       note: "Across the water, boat transfer, total quiet. Our honeymoon pick.",
-      img: "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=900&q=80&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=900&q=80&auto=format&fit=crop",
     },
     {
       name: "Lamu House",
@@ -993,7 +993,7 @@ export const MALINDI: CityData = {
     "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=900&q=80&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=900&q=80&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=900&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=900&q=80&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=80&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=900&q=80&auto=format&fit=crop",
   ],
@@ -1123,7 +1123,7 @@ export const NEIGHBORS: Record<string, NeighboringGuide[]> = {
     { city: "Kisumu", slug: "kisumu", kicker: "Lake Victoria", flag: ["#1B5E3F", "#E2D2AE", "#0F0F0E"], img: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=900&q=80&auto=format&fit=crop", note: "The slow west. Lake sunsets, fresh tilapia." },
   ],
   mombasa: [
-    { city: "Lamu", slug: "lamu", kicker: "Stone island", flag: ["#0F0F0E", "#C8302C", "#1B5E3F"], img: "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=900&q=80&auto=format&fit=crop", note: "Donkeys, dhows, no cars. Kenya's quietest island." },
+    { city: "Lamu", slug: "lamu", kicker: "Stone island", flag: ["#0F0F0E", "#C8302C", "#1B5E3F"], img: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=900&q=80&auto=format&fit=crop", note: "Donkeys, dhows, no cars. Kenya's quietest island." },
     { city: "Malindi", slug: "malindi", kicker: "The coast", flag: ["#7BCEEA", "#FDFBF6", "#C8302C"], img: "https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=900&q=80&auto=format&fit=crop", note: "Portuguese pillar, coral reef, Italian pasta." },
     { city: "Nairobi", slug: "nairobi", kicker: "The capital", flag: ["#1B5E3F", "#FDFBF6", "#C8302C"], img: "https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=900&q=80&auto=format&fit=crop", note: "Gateway city. Karura, Westlands, the wild just south." },
     { city: "Naivasha", slug: "naivasha", kicker: "Rift Valley lake", flag: ["#1B5E3F", "#FDFBF6", "#C8302C"], img: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=900&q=80&auto=format&fit=crop", note: "Hippos and cycling. The highland counterpoint." },
@@ -1159,7 +1159,7 @@ export const NEIGHBORS: Record<string, NeighboringGuide[]> = {
     { city: "Naivasha", slug: "naivasha", kicker: "Rift Valley lake", flag: ["#1B5E3F", "#FDFBF6", "#C8302C"], img: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=900&q=80&auto=format&fit=crop", note: "3h south. Hippos, cycling, the weekend highland." },
   ],
   malindi: [
-    { city: "Lamu", slug: "lamu", kicker: "Stone island", flag: ["#0F0F0E", "#C8302C", "#1B5E3F"], img: "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=900&q=80&auto=format&fit=crop", note: "2h north by road or boat. No cars, no rush." },
+    { city: "Lamu", slug: "lamu", kicker: "Stone island", flag: ["#0F0F0E", "#C8302C", "#1B5E3F"], img: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=900&q=80&auto=format&fit=crop", note: "2h north by road or boat. No cars, no rush." },
     { city: "Mombasa", slug: "mombasa", kicker: "Old port · coast", flag: ["#C8302C", "#FDFBF6", "#0F0F0E"], img: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=900&q=80&auto=format&fit=crop", note: "2h south. Fort Jesus, Old Town, dhow harbour." },
     { city: "Nairobi", slug: "nairobi", kicker: "The capital", flag: ["#1B5E3F", "#FDFBF6", "#C8302C"], img: "https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=900&q=80&auto=format&fit=crop", note: "1h flight. The gateway to all of Kenya." },
     { city: "Naivasha", slug: "naivasha", kicker: "Rift Valley lake", flag: ["#1B5E3F", "#FDFBF6", "#C8302C"], img: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=900&q=80&auto=format&fit=crop", note: "After the coast, the highland. Hippos and Hell's Gate." },

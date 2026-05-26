@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { CITY_GUIDES } from "@/lib/data";
 
 const VISIBLE = CITY_GUIDES;
@@ -33,14 +34,17 @@ export function CityGuides() {
         }}
       >
         {VISIBLE.map((guide, i) => (
-          <div
+          <Link
             key={guide.city}
-            className="flex flex-col flex-shrink-0"
+            href={`/cities/${guide.slug}`}
+            className="flex flex-col flex-shrink-0 group"
             style={{
               borderLeft: i > 0 ? "1.5px solid #0F0F0E" : "none",
               height: 460,
               width: "clamp(220px, 20vw, 320px)",
               scrollSnapAlign: "start",
+              textDecoration: "none",
+              color: "inherit",
             }}
           >
             {/* Text block */}
@@ -48,7 +52,7 @@ export function CityGuides() {
               <p className="font-mono text-[10px] tracking-[0.14em] uppercase opacity-60 mb-3 pb-2 border-b border-ink/40">
                 MyKenya City Guides
               </p>
-              <h3 className="font-sans font-bold text-[24px] leading-none tracking-[-0.02em] mb-1">
+              <h3 className="font-sans font-bold text-[24px] leading-none tracking-[-0.02em] mb-1 group-hover:text-kred transition-colors">
                 {guide.city}
               </h3>
               <p className="font-mono text-[10px] tracking-[0.14em] uppercase opacity-60 mb-2">
@@ -65,11 +69,11 @@ export function CityGuides() {
                 src={Array.isArray(guide.img) ? guide.img[0] : guide.img}
                 alt={guide.city}
                 fill
-                className="object-cover"
-               
+                className={`object-cover group-hover:scale-105 transition-transform duration-300 ${guide.imgPosition ?? "object-center"}`}
+
               />
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 

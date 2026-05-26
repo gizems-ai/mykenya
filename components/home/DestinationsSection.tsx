@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { KenyaMap } from "../KenyaMap";
 import { DESTINATIONS } from "@/lib/data";
 
@@ -68,9 +69,9 @@ export function DestinationsSection() {
           </h3>
           <p className="font-sans text-[17px] opacity-70 mb-6">{activeData.tagline}</p>
           <div className="flex gap-4">
-            <a href="#" className="font-sans text-sm font-bold tracking-[0.06em] uppercase px-5 py-3 bg-ink text-cream rounded-full hover:opacity-90 transition-opacity">
+            <Link href={activeData.link} className="font-sans text-sm font-bold tracking-[0.06em] uppercase px-5 py-3 bg-ink text-cream rounded-full hover:opacity-90 transition-opacity">
               Open guide →
-            </a>
+            </Link>
             <a href="/planner" className="font-sans text-sm font-bold tracking-[0.06em] uppercase px-5 py-3 border border-ink rounded-full hover:bg-ink hover:text-cream transition-colors">
               Plan with AI
             </a>
@@ -81,9 +82,10 @@ export function DestinationsSection() {
       {/* Strip */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {DESTINATIONS.map((dest, i) => (
-          <button
+          <Link
             key={dest.name}
-            onClick={() => setActive(dest.name)}
+            href={dest.link}
+            onMouseEnter={() => setActive(dest.name)}
             className={`group text-left border transition-all ${
               dest.name === active ? "border-kred" : "border-ink/10 hover:border-ink/30"
             }`}
@@ -94,7 +96,7 @@ export function DestinationsSection() {
                 alt={dest.name}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
-               
+
               />
             </div>
             <div className="p-2">
@@ -103,7 +105,7 @@ export function DestinationsSection() {
               </p>
               <p className="font-sans text-xs font-medium truncate">{dest.name}</p>
             </div>
-          </button>
+          </Link>
         ))}
       </div>
     </section>

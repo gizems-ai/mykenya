@@ -129,7 +129,7 @@ export const STAYS: Stay[] = [
     ],
     host: "Owner: Carol & Jan Korschen · Lamu since 1967",
     badges: ["Condé Nast Traveller", "UNESCO Neighbour"],
-    imgSrc: "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=900&q=80&auto=format&fit=crop",
+    imgSrc: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=900&q=80&auto=format&fit=crop",
   },
   {
     id: "camp-02",
@@ -433,7 +433,7 @@ export const STAYS: Stay[] = [
     ],
     host: "Conservancy Host: Gill Church · rhino conservation pioneer",
     badges: ["Rhino Sanctuary", "6 Rooms Only", "Horseback Safari"],
-    imgSrc: "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=900&q=80&auto=format&fit=crop",
+    imgSrc: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=900&q=80&auto=format&fit=crop",
   },
   {
     id: "lodge-04",
