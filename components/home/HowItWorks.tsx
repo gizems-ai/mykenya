@@ -21,7 +21,7 @@ export function HowItWorks() {
   ];
 
   return (
-    <section className="mt-[140px] py-[100px] px-14 bg-kgreen text-cream">
+    <section className="mt-[60px] md:mt-[140px] py-[80px] md:py-[100px] px-4 md:px-14 bg-kgreen text-cream">
       <div className="grid grid-cols-1 md:grid-cols-[1fr_2.2fr] gap-20 items-end">
         {/* Left */}
         <div>

@@ -12,7 +12,7 @@ export function WhatsIncluded() {
     },
     {
       num: "02",
-      accent: "#1B5E3F",
+      accent: "#7BCEEA",
       title: "AI-Assisted Planning",
       subtitle: "→ Smart itinerary, human-refined",
       body: "We use our own trained planner to generate the initial route, then Selin reviews and refines every detail by hand.",
@@ -36,7 +36,7 @@ export function WhatsIncluded() {
     },
     {
       num: "05",
-      accent: "#1B5E3F",
+      accent: "#7BCEEA",
       title: "Curated Stays",
       subtitle: "→ Properties we've slept in",
       body: "Every camp and hotel on our list has been visited. We don't recommend what we haven't experienced ourselves.",
@@ -53,7 +53,7 @@ export function WhatsIncluded() {
   ];
 
   return (
-    <section className="py-[120px] px-14 bg-kgreen text-cream">
+    <section className="py-[80px] md:py-[120px] px-4 md:px-14 bg-kgreen text-cream">
       {/* Header */}
       <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-14 items-end mb-16">
         <div>

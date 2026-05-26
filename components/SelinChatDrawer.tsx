@@ -244,7 +244,7 @@ export default function SelinChatDrawer() {
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
         >
-          <span style={{ fontFamily: "var(--font-newsreader), serif", fontSize: 22, lineHeight: 1 }}>S</span>
+          <span style={{ fontFamily: "var(--font-newsreader), serif", fontSize: 22, lineHeight: 1 }}>A</span>
           {!open && (
             <span style={{
               position: "absolute", top: -4, right: -4,

@@ -3,12 +3,12 @@
 import Image from "next/image";
 import { CITY_GUIDES } from "@/lib/data";
 
-const VISIBLE = CITY_GUIDES.slice(0, 5);
+const VISIBLE = CITY_GUIDES;
 
 export function CityGuides() {
   return (
     <section className="py-[100px]" style={{ background: "#7BCEEA" }}>
-      <div className="px-14">
+      <div className="px-4 md:px-14">
         {/* Header */}
         <div className="flex items-end justify-between pb-4 border-b-[1.5px] border-ink mb-0">
           <h2 className="font-serif text-[clamp(32px,4vw,56px)] uppercase tracking-[-0.01em] font-normal">
@@ -20,16 +20,27 @@ export function CityGuides() {
         </div>
       </div>
 
-      {/* Cards — 5 equal columns, edge-to-edge from px-14 */}
-      <div className="px-14 flex" style={{ gap: 0 }}>
+      {/* Cards — desktop: 5 equal cols | mobile: horizontal scroll */}
+      <div
+        className="flex"
+        style={{
+          gap: 0,
+          overflowX: "auto",
+          WebkitOverflowScrolling: "touch",
+          scrollSnapType: "x mandatory",
+          paddingLeft: 16,
+          paddingRight: 16,
+        }}
+      >
         {VISIBLE.map((guide, i) => (
           <div
             key={guide.city}
-            className="flex-1 flex flex-col"
+            className="flex flex-col flex-shrink-0"
             style={{
               borderLeft: i > 0 ? "1.5px solid #0F0F0E" : "none",
-              minWidth: 0,
               height: 460,
+              width: "clamp(220px, 20vw, 320px)",
+              scrollSnapAlign: "start",
             }}
           >
             {/* Text block */}
@@ -37,7 +48,7 @@ export function CityGuides() {
               <p className="font-mono text-[10px] tracking-[0.14em] uppercase opacity-60 mb-3 pb-2 border-b border-ink/40">
                 MyKenya City Guides
               </p>
-              <h3 className="font-sans font-bold text-[28px] leading-none tracking-[-0.02em] mb-1">
+              <h3 className="font-sans font-bold text-[24px] leading-none tracking-[-0.02em] mb-1">
                 {guide.city}
               </h3>
               <p className="font-mono text-[10px] tracking-[0.14em] uppercase opacity-60 mb-2">
@@ -62,7 +73,7 @@ export function CityGuides() {
         ))}
       </div>
 
-      <div className="px-14 mt-0 border-t-[1.5px] border-ink" />
+      <div className="px-4 md:px-14 mt-0 border-t-[1.5px] border-ink" />
     </section>
   );
 }

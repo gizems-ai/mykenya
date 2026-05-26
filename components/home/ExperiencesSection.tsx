@@ -15,7 +15,7 @@ const ACCENT_COLORS = ["#C8302C", "#1B5E3F", "#0F0F0E", "#E2D2AE"];
 
 export function ExperiencesSection() {
   return (
-    <section className="py-[100px] px-14 bg-cream">
+    <section className="py-[100px] px-4 md:px-14 bg-cream">
       <div className="flex items-end justify-between mb-12">
         <div>
           <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-kred mb-5">
@@ -63,7 +63,7 @@ export function ExperiencesSection() {
                 {e.tag} ·
               </span>
               <div>
-                <h3 className="font-serif text-[32px] leading-[1.05] font-normal">
+                <h3 className="font-serif text-[22px] md:text-[32px] leading-[1.05] font-normal">
                   {e.title}
                 </h3>
                 <p className="font-sans text-[12px] leading-relaxed mt-3" style={{ opacity: 0.85 }}>
